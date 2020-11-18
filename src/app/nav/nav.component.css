@@ -1,0 +1,16 @@
+#navbarNavAltMarkup{
+    justify-content: flex-end;
+}
+
+a{
+    margin: 0 20px;
+    
+}
+
+
+.imagen{
+    width: 40%;
+}
+.activa{
+    font-weight: bold;
+}

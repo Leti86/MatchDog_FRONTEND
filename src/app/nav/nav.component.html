@@ -1,26 +1,24 @@
-<div class="nav">
-    <button type="button" class="btn btn-dark" [routerLink]="['home']" routerLinkActive="activa">Home</button>
-    <button type="button" class="btn btn-dark" [routerLink]="['blog']" routerLinkActive="activa">Blog</button>
-    <button type="button" class="btn btn-dark" [routerLink]="['animales']" routerLinkActive="activa">Nuestros
-        Animales</button>
-    <button type="button" class="btn btn-dark" [routerLink]="['protectoras']"
-        routerLinkActive="activa">Protectoras</button>
-    <button type="button" class="btn btn-dark" [routerLink]="['login']" routerLinkActive="activa">Login</button>
-</div>
-
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+
+    <a class="navbar-brand" href="#">
+        <div class="imagen">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8ZMFIuti_rFG30ZjrHfygSCLigtrkuRGz5Q&usqp=CAU
+            " alt="imagen perro">
+        </div>
+    </a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Pricing</a>
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <div class="navbar-nav" id="navbarInterno">
+            <a class="nav-link" [routerLink]="['home']" routerLinkActive="activa">Home</a>
+            <a class="nav-link" [routerLink]="['blog']" routerLinkActive="activa">Blog</a>
+            <a class="nav-link" [routerLink]="['animales']" routerLinkActive="activa">Nuestros Animales</a>
+            <a class="nav-link" tabindex="-1" [routerLink]="['protectoras']" routerLinkActive="activa">Protectoras</a>
+            <a class="nav-link" tabindex="-1" [routerLink]="['login']" routerLinkActive="activa">Login</a>
         </div>
     </div>
 </nav>
