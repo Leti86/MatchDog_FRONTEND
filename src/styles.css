@@ -1,5 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+/* RESET BÁSICO*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*FIN DEL RESET*/
+
+/* ESTILOS GLOBALES*/
+
+
 img{
     display: block;
     width: 100%;
 }
+
+a:link, a:visited, a:active{
+    text-decoration: none;
+}
+
