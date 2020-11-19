@@ -1,0 +1,52 @@
+.jumbotron {
+
+    background-image: url("https://www.yoamoalasmascotas.com/wp-content/uploads/2019/03/pastor-aleman-como-perro-policia.jpg");
+    height: 88vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+    padding-top: 10em;
+
+}
+.jumbotron h1{
+    color: rgb(172, 65, 3);
+}
+.jumbotron p{
+    color: rgb(172, 65, 3);
+    margin-left: 3%;
+}
+
+.wrapper{
+    margin: 2% 10%;
+}
+.aboutus h2{
+    text-align: center;
+    margin: 2% 0;
+}
+.aboutus p{
+    line-height: 2em;
+    text-align: center;
+}
+
+.contenedor_articulos{
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+}
+
+article{
+    padding: 10px;
+    border: 1px solid black;
+    max-width: 45%;
+    margin: 1em;
+    
+}
+article .imagen{
+    max-width: 30%;
+}
+article .descripcion{
+    max-width: 60%;
+    margin-left: 3%;
+}
+
