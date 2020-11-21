@@ -19,3 +19,9 @@ a:link, a:visited, a:active{
     text-decoration: none;
 }
 
+span{
+    font-weight: bold;
+    /* aquí en vez de bold tendremos que poner la tipografía negrita cuando elijamos una y la importemos de google fonts */
+}
+
+

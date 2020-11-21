@@ -1,0 +1,43 @@
+.wrapper{
+    margin: 2% 10%;
+}
+
+.container{
+    margin: 5em 0;
+}
+
+.welcome h2{
+    text-align: center;
+    margin: 2% 0;
+}
+.welcome p{
+    line-height: 2em;
+    text-align: center;
+}
+
+.card-img{
+    opacity: 1;
+    transition: all 0.5s linear;
+}
+
+
+.card-img-overlay{
+    opacity: 0;
+    transition: all 0.5s linear;
+}
+
+
+
+.card:hover .card-img{
+    opacity: 0.3;
+}
+.card:hover .card-img-overlay{
+    opacity: 1;
+}
+
+span{
+    font-weight: bold;
+    /* aquí en vez de bold tendremos que poner la tipografía negrita cuando elijamos una y la importemos de google fonts */
+}
+
+
