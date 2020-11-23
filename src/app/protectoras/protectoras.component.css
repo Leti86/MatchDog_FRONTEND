@@ -15,6 +15,11 @@
     text-align: center;
 }
 
+.card{
+    margin: 2rem;
+    max-width: 100%;
+}
+
 .card-img{
     opacity: 1;
     transition: all 0.5s linear;
@@ -24,6 +29,11 @@
 .card-img-overlay{
     opacity: 0;
     transition: all 0.5s linear;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 
@@ -39,5 +49,16 @@ span{
     font-weight: bold;
     /* aquí en vez de bold tendremos que poner la tipografía negrita cuando elijamos una y la importemos de google fonts */
 }
+.tarjetas_protectoras{
+    justify-content: center;
+}
 
 
+@media(min-width:1000px){
+    .card{
+        margin: 2rem 1rem;
+        max-width: 45%;
+    }
+    
+    
+}
