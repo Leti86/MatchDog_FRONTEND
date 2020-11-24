@@ -3,37 +3,37 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nombre</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="nombre">
             </div>
         </div>
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3">
+                <input type="email" class="form-control" id="inputEmail3" name="email">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Telefono</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="telefono">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Direccion</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="direccion">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Localidad</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="localidad">
             </div>
+
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Provincia</label>
             <div class="col-sm-10">
-                <input type="submit" value="madrid" class="form-control">
                 <select class="form-control">
                     <option selected value="madrid">Madrid</option>
                 </select>
@@ -55,23 +55,20 @@
                 <legend class="col-form-label col-sm-2 pt-0">Necesidad de voluntarios</legend>
                 <div class="col-sm-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                        <!-- CONTINUAR DESDE AQUI -->
-                        <label class="form-check-label" for="gridRadios1">
+                        <input class="form-check-input" type="radio" name="voluntarios" value="option1">
+                        <label class="form-check-label">
                             ALTA
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2"
-                            checked>
-                        <label class="form-check-label" for="gridRadios2">
+                        <input class="form-check-input" type="radio" name="voluntario" value="option2" checked>
+                        <label class="form-check-label">
                             MEDIA
                         </label>
                     </div>
                     <div class="form-check disabled">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3"
-                            disabled>
-                        <label class="form-check-label" for="gridRadios3">
+                        <input class="form-check-input" type="radio" name="voluntarios" value="option3" disabled>
+                        <label class="form-check-label">
                             BAJA
                         </label>
                     </div>
@@ -79,19 +76,19 @@
             </div>
         </fieldset>
         <div class="form-group row">
-            <div class="col-sm-2">Checkbox</div>
+            <label class="col-sm-2 col-form-label">Imagen</label>
             <div class="col-sm-10">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                    <label class="form-check-label" for="gridCheck1">
-                        Example checkbox
-                    </label>
-                </div>
+                <input type="url" class="form-control" name="imagen">
             </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Comentarios</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="comentarios"></textarea>
         </div>
         <div class="form-group row">
             <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
         </div>
     </form>
