@@ -1,21 +1,36 @@
-.jumbotron {
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&display=swap');
 
+/* font-family: 'Neucha', cursive;
+font-family: 'Hind Madurai', sans-serif; */
+
+/* ESTILOS DEL HERO */
+.jumbotron {
     background-image: url("https://www.yoamoalasmascotas.com/wp-content/uploads/2019/03/pastor-aleman-como-perro-policia.jpg");
     height: 85vh;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    
     padding-top: 10em;
+}
+.titulo{
+    display: inline-block;
+    margin-left: 8%;
+}
 
+.jumbotron .titulo h1{
+    color:  rgb(124, 47, 3);
+    font-family: 'Neucha', cursive;
+    font-size: 5rem;
 }
-.jumbotron h1{
-    color: rgb(172, 65, 3);
+
+.jumbotron .titulo p{
+    color: rgb(124, 47, 3);
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
 }
-.jumbotron p{
-    color: rgb(172, 65, 3);
-    margin-left: 3%;
-}
+
 
 .wrapper{
     margin: 2% 10%;
@@ -32,6 +47,47 @@
     line-height: 2em;
     text-align: center;
 }
+/* FIN ESTILOS DEL HERO */
+
+
+/* ESTILOS DE INFOGRAFIA */
+
+.infografia{
+    background-color: coral;
+    text-align: center;
+}
+.infografia .row{
+    flex-wrap: wrap;
+    margin: 2% 0;
+    
+}
+
+.infografia article{
+    margin: 2% 0;
+    width: 100%;
+    background-color: chartreuse;
+    
+}
+
+
+/* FIN ESTILOS DE INFOGRAFIA */
 
 
 
+/* MEDIA QUERYS */
+@media(min-width: 800px){
+    .jumbotron .titulo h1{
+        font-size: 7rem;
+    }
+    .jumbotron .titulo p{
+        font-size: 2rem;
+    }
+    .infografia article{
+        width: 25%;
+        padding: 0 3%;
+        background-color: chartreuse;
+        
+    }
+
+}
+/* FIN MEDIA QUERY */
