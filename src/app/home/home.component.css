@@ -23,7 +23,10 @@ h3{
 p{
     font-family: 'Hind Madurai', sans-serif;
     font-size: 1.2rem;
+    line-height: 2em;
+    text-align: center;
 }
+
 
 /* FIN ESTILOS GLOBALES*/
 
@@ -63,10 +66,6 @@ p{
     margin: 5em 0;
 }
 
-.aboutus p{
-    line-height: 2em;
-    text-align: center;
-}
 /* FIN ESTILOS DEL HERO */
 
 
@@ -101,6 +100,65 @@ p{
 /* FIN ESTILOS DE INFOGRAFIA */
 
 
+/*INICIO ESTILOS SECCION COMIENZA AQUI*/
+
+
+.seccion_comienza{
+    margin: 3.5rem;
+}
+
+
+
+.tarjeta{
+    border:3px solid transparent;
+    border-radius: 0%;
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 2rem 0;
+}
+
+.tarjeta:hover{
+    cursor: pointer;
+    border-bottom: 3px solid lightgray;
+}
+
+/*FIN ESTILOS CARDS*/
+
+/*INICIO ESTILOS QUIENES*/
+.quienes{
+    background-color: lightgray;
+    padding: 2rem 0 5rem 0;
+    
+}
+.quienes p{
+    margin: 0 15%;
+}
+
+.imagenes_quienes{
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 3rem 0;
+}
+
+.imagen_quien{
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    background-image: url('https://i.pinimg.com/originals/d8/47/b6/d847b6a520056df8b975f9e1e6c5f362.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border: 2px solid lightslategray;
+    border-radius: 50%;
+}
+
+
+/*FIN ESTILOS QUIENES*/
+
 
 /* MEDIA QUERYS */
 @media(min-width: 800px){
@@ -116,6 +174,17 @@ p{
     .infografia article{
         width: 25%;
         padding: 0 1.5rem;
+    }
+    .imagen_quien{
+        width: 200px;
+        height: 200px;
+        background-color: green;
+        border: 2px solid lightslategray;
+        border-radius: 50%;
+    }
+
+    .tarjeta{
+        padding: 0 3rem;
     }
 
 }
