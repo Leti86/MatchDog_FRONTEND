@@ -1,3 +1,4 @@
+<h2>hola</h2>
 <div class="container">
     <form>
         <div class="form-group row">
@@ -19,7 +20,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Direccion</label>
+            <label class="col-sm-2 col-form-label">Dirección</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" name="direccion">
             </div>
@@ -42,11 +43,11 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Latitud</label>
-                <input type="text" class="form-control" name="latitud" formControlName="latitud">
+                <input type="text" class="form-control" name="latitud">
             </div>
             <div class="form-group col-md-6">
                 <label>Longitud</label>
-                <input type="text" class="form-control" name="longitud" formControlName="longitud">
+                <input type="text" class="form-control" name="longitud">
             </div>
         </div>
 
@@ -61,13 +62,13 @@
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="voluntario" value="option2" checked>
+                        <input class="form-check-input" type="radio" name="voluntarios" value="option2">
                         <label class="form-check-label">
                             MEDIA
                         </label>
                     </div>
-                    <div class="form-check disabled">
-                        <input class="form-check-input" type="radio" name="voluntarios" value="option3" disabled>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="voluntarios" value="option3">
                         <label class="form-check-label">
                             BAJA
                         </label>
@@ -86,10 +87,10 @@
             <label for="exampleFormControlTextarea1">Comentarios</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="comentarios"></textarea>
         </div>
-        <div class="form-group row">
-            <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </div>
+        <div class="form-group">
+
+            <button type="submit" class="btn btn-dark">Enviar</button>
+
         </div>
     </form>
 </div>

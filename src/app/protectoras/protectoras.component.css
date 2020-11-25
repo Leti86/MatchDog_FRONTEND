@@ -64,6 +64,42 @@ span{
     justify-content: center;
 }
 
+.formulario{
+    background-color: rgb(206, 201, 198);
+    padding: 10px;
+    border-radius:10px;
+    
+}
+
+.formulario h2{
+    text-align: center;
+       
+}
+
+.componente{
+    margin: 30px 0;
+}
+
+.mapa{    
+    padding: 2%;
+    
+}
+
+.mapa h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.mapa .row{
+    justify-content: center;    
+}  
+
+.mapa img{
+    width: 60%;    
+}
+
+
+
 
 @media(min-width:1000px){
     .card{
