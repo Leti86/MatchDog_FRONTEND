@@ -1,7 +1,7 @@
 footer{
     width: 100%;
     margin-bottom: 0;
-    height: 18vh;
+    height: 15vh;
     padding: 1.5em 0 0 0;
     background-color: black;
     display: flex;
@@ -22,10 +22,11 @@ footer{
     width: 50%;
     
 }
-.copyright{
+/* .copyright{
     color:rgba(250, 250, 250, 0.418);
     margin-top: 20px;
-}
+    max-width: fit-content;
+} */
 
 
 i{

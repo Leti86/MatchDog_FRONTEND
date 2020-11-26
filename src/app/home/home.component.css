@@ -38,6 +38,7 @@ p{
     background-position: center center;
     background-size: cover;
     padding-top: 10em;
+    border-radius: 0;
 }
 .titulo{
     display: inline-block;
