@@ -1,0 +1,97 @@
+.buscador{
+    background-color: magenta;
+}
+.opciones{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    
+}
+
+.opcion{
+    border-radius: 0%;
+    border:3px solid transparent;
+    max-width: 100%;
+    margin: 2% 5%;
+    
+}
+.opcion:hover{
+    border-color: lightgray;
+}
+
+/*INICIO ESTILOS DE LA CARD DE LOS PERROS*/
+
+
+
+.perro{
+    margin: 2% 0;
+    max-width: 80%;
+}
+.perros{
+    background-color: limegreen;
+    padding: 0;
+    margin: 5%;
+}
+.tarjetas_perros{
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.perro:hover .card-img{
+    opacity: 0.3;
+}
+.perro:hover .card-img-overlay{
+    opacity: 1;
+}
+
+.card-img{
+    opacity: 1;
+    transition: all 0.5s linear;
+}
+
+
+.card-img-overlay{
+    opacity: 0;
+    transition: all 0.5s linear;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card-img-overlay p, .card-img-overlay h5, .card-img-overlay button{
+    text-align: center;
+    
+}
+
+button{
+    border-radius: 0%;
+    border: none;
+    font-weight: bold;
+}
+
+/*FIN ESTILOS DE LA CARD DE LOS PERROS*/
+
+@media(min-width:800px){
+    .opciones{
+       
+        flex-direction: row;
+        
+    }
+    .opcion{
+        padding: 2% 5%;
+    }
+    
+
+
+}
+@media(min-width:1100px){
+    .perro{
+        
+        max-width: 30%;
+    }
+}
+
+
+
