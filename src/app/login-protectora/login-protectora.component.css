@@ -1,0 +1,9 @@
+
+form label, legend{
+    font-weight:bold;
+}
+
+button:hover{
+	cursor:pointer;
+}
+

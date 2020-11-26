@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&display=swap');
+/* font-family: 'Neucha', cursive;
+font-family: 'Hind Madurai', sans-serif; */
+
+
 .wrapper{
     margin: 2% 10%;
 }
@@ -15,7 +21,7 @@
     text-align: center;
 }
 
-.card{
+.tj{
     margin: 2rem;
     max-width: 100%;
 }
@@ -49,10 +55,10 @@ button{
 
 
 
-.card:hover .card-img{
+.tj:hover .card-img{
     opacity: 0.3;
 }
-.card:hover .card-img-overlay{
+.tj:hover .card-img-overlay{
     opacity: 1;
 }
 
@@ -64,16 +70,72 @@ span{
     justify-content: center;
 }
 
-
-@media(min-width:1000px){
-    .card{
-        margin: 2rem 1rem;
-        max-width: 45%;
-    }
+.formulario{
+    background-color: rgb(208, 211, 212);
+    padding: 10px;
+    border-radius:10px;
+    margin:15px 0;     
     
+}
+
+.formulario h2{
+    text-align: center;
+    margin-bottom: 15px;
+       
+}
+
+/* INICIO ESTILOS LOCALIZACION_MAPA */
+
+.detalle_protectoras:hover{
+    /* -webkit-transform:scale(1.1); */
+    transform:scale(1.2); 
+    cursor:pointer;
+
+}
+
+.detalle_protectoras{
+    overflow:hidden;
+}
+
+
+.card-body{
+    line-height: 1.1em;
+    font-family: 'Neucha', cursive;
     
     
 }
+
+.card-title{
+    font-weight: bold;
+}
+
+.localizacion_protectoras{
+    margin: 2%;
+}
+
+
+.lista_protectoras{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+} 
+
+
+/* Tarjetas logo protectoras */
+
+@media(min-width:1000px){
+    .tj{
+        margin: 2rem 1rem;
+        max-width: 45%;
+    }  
+    
+    
+}
+
+
 
 @media(max-width:600px){
     .card-img-overlay p, .card-img-overlay h5, .card-img-overlay button{
