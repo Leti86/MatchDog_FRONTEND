@@ -1,11 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&display=swap');
-/* font-family: 'Neucha', cursive;
-font-family: 'Hind Madurai', sans-serif; */
-
 
 .wrapper{
     margin: 2% 10%;
+    
 }
 
 .container{
@@ -15,10 +11,14 @@ font-family: 'Hind Madurai', sans-serif; */
 .welcome h2{
     text-align: center;
     margin: 2% 0;
+    font-family: var(--fuente_titulos);
+    color: var(--color_marron);
+    font-size: var(--size_titulo);
 }
 .welcome p{
-    line-height: 2em;
+    line-height: var(--line_height);
     text-align: center;
+    font-family: var(--fuente_textos);
 }
 
 .tj{
@@ -71,8 +71,8 @@ span{
 }
 
 .formulario{
-    background-color: rgb(208, 211, 212);
-    padding: 10px;
+    /* background-color: var(--color_gris); */
+    padding: 15px 0;
     border-radius:10px;
     margin:15px 0;     
     
@@ -81,6 +81,9 @@ span{
 .formulario h2{
     text-align: center;
     margin-bottom: 15px;
+    font-family: var(--fuente_titulos);
+    color: var(--color_marron);
+    font-size: var(--size_titulo);
        
 }
 
@@ -110,7 +113,16 @@ span{
 }
 
 .localizacion_protectoras{
-    margin: 2%;
+    margin: 5%;
+    
+    padding-top: 1%;
+    padding: 2%;
+   
+    
+}
+
+.localizacion_protectoras h{
+    text-align: center;
 }
 
 
@@ -122,6 +134,26 @@ span{
     
     
 } 
+/* JUMBOTROM */
+.jumbotron {
+    background-image: url("https://www.recreoviral.com/wp-content/uploads/2017/02/abrazos-perros-4.jpg");
+     height: 60vh;    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding-top: 10em;
+    border-radius: 0;
+    
+}
+
+.titulo{
+    color: whitesmoke;
+}
+
+
+
+
+/* FIN JUMBOTROM */
 
 
 /* Tarjetas logo protectoras */
