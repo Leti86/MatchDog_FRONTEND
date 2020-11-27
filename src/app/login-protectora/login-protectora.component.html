@@ -1,52 +1,79 @@
 <div class="container">
-    <form>
+    <form [formGroup]="formRegistroProtectoras" (ngSubmit)="onSubmit()">
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nombre</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="nombre">
+                <input type="text" class="form-control" formControlName="nombre">
+                <p class="text-dark"
+                    *ngIf="formRegistroProtectoras.get('nombre').hasError('required') && formRegistroProtectoras.get('nombre').touched">
+                    Por favor, indiquenos su nombre
+                </p>
             </div>
         </div>
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3" name="email">
+                <input type="email" class="form-control" id="inputEmail3" formControlName="email">
+                <p class="text-dark"
+                    *ngIf="formRegistroProtectoras.get('email').hasError('pattern') && formRegistroProtectoras.get('email').touched">
+                    El email debe tener un formato correcto
+                </p>
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Telefono</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="telefono">
+                <input type="text" class="form-control" formControlName="telefono">
+                <p class="text-dark"
+                    *ngIf="formRegistroProtectoras.get('telefono').hasError('minlength') && formRegistroProtectoras.get('telefono').touched">
+                    El telefono debe de contener
+                    {{formRegistroProtectoras.get('telefono').errors.minlength.requiredLength}}
+                    caract. Has escrito {{formRegistroProtectoras.get('telefono').errors.minlength.actualLength}}
+                    caracteres
+                </p>
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Dirección</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="direccion">
+                <input type="text" class="form-control" formControlName="direccion">
+                <p class="text-dark"
+                    *ngIf="formRegistroProtectoras.get('direccion').hasError('required') && formRegistroProtectoras.get('direccion').touched">
+                    Por favor, indiquenos su nombre direccion
+                </p>
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Localidad</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="localidad">
+                <input type="text" class="form-control" formControlName="localidad">
+                <p class="text-dark"
+                    *ngIf="formRegistroProtectoras.get('localidad').hasError('required') && formRegistroProtectoras.get('localidad').touched">
+                    Por favor, indiquenos su localidad
+                </p>
             </div>
 
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Provincia</label>
             <div class="col-sm-10">
-                <select class="form-control">
+                <select class="form-control" formControlName="provincia">
                     <option selected value="madrid">Madrid</option>
                 </select>
+                <p class="text-dark"
+                    *ngIf="formRegistroProtectoras.get('provincia').hasError('required') && formRegistroProtectoras.get('provincia').touched">
+                    Por favor, indiquenos su provincia
+                </p>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Latitud</label>
-                <input type="text" class="form-control" name="latitud">
+                <input type="text" class="form-control" formControlName="latitud">
             </div>
             <div class="form-group col-md-6">
                 <label>Longitud</label>
-                <input type="text" class="form-control" name="longitud">
+                <input type="text" class="form-control" formControlName="longitud">
             </div>
         </div>
 
@@ -55,36 +82,52 @@
                 <legend class="col-form-label col-sm-2 pt-0">Necesidad de voluntarios</legend>
                 <div class="col-sm-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="voluntarios" value="option1">
+                        <input class="form-check-input" type="radio" formControlName="necesidad_voluntarios"
+                            value="option1">
                         <label class="form-check-label">
                             ALTA
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="voluntarios" value="option2">
+                        <input class="form-check-input" type="radio" formControlName="necesidad_voluntarios"
+                            value="option2">
                         <label class="form-check-label">
                             MEDIA
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="voluntarios" value="option3">
+                        <input class="form-check-input" type="radio" formControlName="necesidad_voluntarios"
+                            value="option3">
                         <label class="form-check-label">
                             BAJA
                         </label>
                     </div>
+                    <p class="text-dark"
+                        *ngIf="formRegistroProtectoras.get('necesidad_voluntarios').hasError('required') && formRegistroProtectoras.get('necesidad_voluntarios').touched">
+                        Actualmente, ¿cual es su necesidad de volcuntarios?
+                    </p>
                 </div>
             </div>
         </fieldset>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Imagen</label>
             <div class="col-sm-10">
-                <input type="url" class="form-control" name="imagen">
+                <input type="url" class="form-control" formControlName="imagen">
+                <p class="text-dark"
+                    *ngIf="formRegistroProtectoras.get('imagen').hasError('required') && formRegistroProtectoras.get('imagen').touched">
+                    Por favor, introduce "minimo" una imagen
+                </p>
             </div>
         </div>
 
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Comentarios</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="comentarios"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="comentarios"
+                formControlName="comentarios"></textarea>
+            <p class="text-dark"
+                *ngIf="formRegistroProtectoras.get('comentarios').hasError('required') && formRegistroProtectoras.get('comentarios').touched">
+                Por favor, haznos un breve resumen
+            </p>
         </div>
         <div class="form-group">
 
