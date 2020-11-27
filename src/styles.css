@@ -1,8 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&display=swap');
+/* font-family: 'Neucha', cursive;
+font-family: 'Hind Madurai', sans-serif; */
+
+
+
 /* RESET BÁSICO*/
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root{
+ --fuente_titulos: 'Neucha', cursive;
+ --fuente_textos: 'Hind Madurai', sans-serif;
+ --color_marron: rgb(124, 47, 3);
+ --color_gris: lightgray;
+ --size_titulo: 3rem;
+ --size_texto: 1.2rem;
+ --line_height: 2rem;
 }
 
 /*FIN DEL RESET*/
