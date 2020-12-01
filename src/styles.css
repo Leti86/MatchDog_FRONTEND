@@ -42,5 +42,14 @@ span{
     font-weight: bold;
     /* aquí en vez de bold tendremos que poner la tipografía negrita cuando elijamos una y la importemos de google fonts */
 }
+h2{
+    color: var(--color_marron);
+    font-family: var(--fuente_titulos);
+    font-size: var(--size_titulo);
+}
 
+p{
+    font-family: var(--fuente_textos);
+    font-size: var(--size_texto);
+}
 
