@@ -8,4 +8,7 @@ form label, legend{
 button:hover{
 	cursor:pointer;
 }
+form p{
+    font-size: small;
+}
 

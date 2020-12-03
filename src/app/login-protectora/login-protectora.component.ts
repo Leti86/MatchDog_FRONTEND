@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ProtectoraService } from '../servicios/protectora.service';
 
 @Component({
   selector: 'app-login-protectora',
@@ -10,7 +11,9 @@ export class LoginProtectoraComponent implements OnInit {
 
   formRegistroProtectoras: FormGroup;
 
-  constructor() {
+  constructor(
+    private protectoraService: ProtectoraService
+  ) {
     this.formRegistroProtectoras = new FormGroup({
       nombre: new FormControl(
         '', [Validators.required]
@@ -61,7 +64,12 @@ export class LoginProtectoraComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.formRegistroProtectoras.value);
+    this.protectoraService.create(this.formRegistroProtectoras.value)
+      .then(response => {
+        console.log(response);
+
+      })
+      .catch(error => console.log(error));
 
   }
 

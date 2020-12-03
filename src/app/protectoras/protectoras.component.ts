@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Protectora, ProtectoraService } from '../servicios/protectora.service';
 
 @Component({
   selector: 'app-protectoras',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProtectorasComponent implements OnInit {
 
-  constructor() { }
+  protectoras: Protectora[];
+
+  constructor(private protectoraService: ProtectoraService) { }
 
   ngOnInit(): void {
+
+    this.protectoraService.getAll()
+      .then(response => {
+        this.protectoras = response;
+      })
+      .catch(error => console.log(error));
   }
 
 }

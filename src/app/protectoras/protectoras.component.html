@@ -14,46 +14,7 @@
         </p>
     </div>
 
-    <!-- <div class="row tarjetas_protectoras">
 
-        <div class="card tj">
-            <img src="https://dialogosdeactualidad.files.wordpress.com/2014/05/acunr-2.jpg" class="card-img" alt="logo">
-            <div class="card-img-overlay">
-                <h5 class="card-title">ACUNR-Animales con un nuevo rumbo</h5>
-                <p class="card-text">Contáctanos en el 666777888 o a través de acunr@mail.com</p>
-
-                <button type="button" class="btn btn-outline-dark">Saber más <i
-                        class="fas fa-arrow-alt-circle-right"></i></button>
-
-                <p class="card-text">Direccion: direccion Provincia Localidad</p>
-
-                <p class="card-text"><span>¡Necesitamos voluntarios!</span></p>
-                <button type="button" class="btn btn-outline-dark">Quiero ser voluntario <i
-                        class="fas fa-arrow-alt-circle-right"></i></button>
-
-
-            </div>
-        </div>
-        <div class="card tj">
-            <img src="https://dialogosdeactualidad.files.wordpress.com/2014/05/acunr-2.jpg" class="card-img" alt="logo">
-            <div class="card-img-overlay">
-                <h5 class="card-title">ACUNR-Animales con un nuevo rumbo</h5>
-                <p class="card-text">Contáctanos en el 666777888 o a través de acunr@mail.com</p>
-
-                <button type="button" class="btn btn-outline-dark">Saber más <i
-                        class="fas fa-arrow-alt-circle-right"></i></button>
-
-                <p class="card-text">Direccion: direccion Provincia Localidad</p>
-
-                <p class="card-text"><span>¡Necesitamos voluntarios!</span></p>
-                <button type="button" class="btn btn-outline-dark">Quiero ser voluntario <i
-                        class="fas fa-arrow-alt-circle-right"></i></button>
-
-            </div>
-        </div>
-
-
-    </div> -->
 </div>
 
 
@@ -61,7 +22,8 @@
 
     <div class="col-md-3 col-12 d-md-block d-none lista_protectoras">
 
-        <div class="card mb-3 detalle_protectoras" style="max-width: 290px;">
+        <div class="card mb-3 detalle_protectoras" style="max-width: 290px; height: 170px"
+            *ngFor="let protectora of protectoras | slice:0:3">
             <div class="row no-gutters">
                 <div class="col-md-4">
                     <img src="https://www.albergaria.es/media/logos/medium/protectora-de-asturias-1453886309.jpg"
@@ -69,55 +31,21 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">Protectora Ojos Blancos</h5>
-                        <p class="card-text">Camino de la Alcarria nº9</p>
-                        <p class="card-text"><small class="text-muted">Madrid</small></p>
+                        <h5 class="card-title">{{protectora.nombre}}</h5>
+                        <p class="card-text">{{protectora.direccion}}</p>
+                        <p class="card-text"><small>{{protectora.localidad}}</small></p>
                     </div>
                 </div>
             </div>
         </div>
 
-
-
-
-
-
-        <div class="card mb-3 detalle_protectoras" style="max-width: 290px;">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="https://www.albergaria.es/media/logos/medium/protectora-de-asturias-1453886309.jpg"
-                        class="card-img">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Protectora Ojos Blancos</h5>
-                        <p class="card-text">Camino de la Alcarria nº9</p>
-                        <p class="card-text"><small class="text-muted">Madrid</small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card mb-3 detalle_protectoras" style="max-width: 290px;">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="https://www.albergaria.es/media/logos/medium/protectora-de-asturias-1453886309.jpg"
-                        class="card-img">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Protectora Ojos Blancos</h5>
-                        <p class="card-text">Camino de la Alcarria nº9</p>
-                        <p class="card-text"><small class="text-muted">Madrid</small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="col-md-6 col-12">
         <app-map></app-map>
     </div>
     <div class="col-md-3 col-12 d-md-block d-none lista_protectoras">
-        <div class="card mb-3 detalle_protectoras" style="max-width: 290px;">
+        <div class="card mb-3 detalle_protectoras" style="max-width: 290px; height: 170px"
+            *ngFor="let protectora of protectoras | slice:3:6">
             <div class="row no-gutters">
                 <div class="col-md-4">
                     <img src="https://www.albergaria.es/media/logos/medium/protectora-de-asturias-1453886309.jpg"
@@ -125,43 +53,15 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">Protectora Ojos Blancos</h5>
-                        <p class="card-text">Camino de la Alcarria nº9</p>
-                        <p class="card-text"><small class="text-muted">Madrid</small></p>
+                        <h5 class="card-title">{{protectora.nombre}}</h5>
+                        <p class="card-text">{{protectora.direccion}}</p>
+                        <p class="card-text"><small>{{protectora.localidad}}</small></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card mb-3 detalle_protectoras" style="max-width: 290px;">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="https://www.albergaria.es/media/logos/medium/protectora-de-asturias-1453886309.jpg"
-                        class="card-img">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Protectora Ojos Blancos</h5>
-                        <p class="card-text">Camino de la Alcarria nº9</p>
-                        <p class="card-text"><small class="text-muted">Madrid</small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card mb-3 detalle_protectoras" style="max-width: 290px;">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="https://www.albergaria.es/media/logos/medium/protectora-de-asturias-1453886309.jpg"
-                        class="card-img">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Protectora Ojos Blancos</h5>
-                        <p class="card-text">Camino de la Alcarria nº9</p>
-                        <p class="card-text"><small class="text-muted">Madrid</small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
     </div>
 </div>
 

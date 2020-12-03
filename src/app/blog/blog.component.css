@@ -23,10 +23,20 @@ h2{
     padding: 1.5% 1.5% 1.5% 1%; 
 }
 
-.noticias .noticia h5{
+.noticias .noticia h4{
  font-family: var(--fuente_textos);
  font-weight: 700;
+ cursor: pointer;
+ 
+
 }
+.noticias .noticia h4:hover{
+    text-decoration: underline;
+}
+.noticias .noticia img{
+    cursor: pointer;
+}
+
 
 .noticias .anterior, .siguiente{
     padding: 0 5%;
@@ -41,13 +51,15 @@ h2{
     
     /* background-color: green; */ 
     padding: 1.5% 0;  
+    height: auto;
     
 }
 
-.busquedas h4{
-    font-size: 2rem;
+.busquedas h5{
+    font-weight: 700;
     text-align: center;
-    font-family: var(--fuente_textos);
+    color: var(--color_marron);
+    
 
 }
 
@@ -62,21 +74,52 @@ h2{
 .busquedas .post_recientes ul li{
     font-family: var(--fuente_titulos);
     text-align: center;
+    cursor: pointer;
+}
+
+.busquedas .post_recientes ul li:hover{
+    font-weight: 700;
 }
 
 
 .categorias{
-    font-family: var(--fuente_titulos);
-    /* background-color: red; */
+    font-weight: 600;
+    text-align: center;    
+    
     width: 100%;
     height: auto;
     margin: 15% 0;
     padding: 2% 0;
+    border: 4px solid rgb(124, 47, 3);
+}
+.categorias h5{
+    color: black;
+    font-weight: 700;
+}
+
+.categorias ul li{
+    font-family: var(--fuente_textos);
+    color: black;
+}
+
+.categorias ul li:hover{
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .rrss{
+    font-weight: 600;
+    text-align: center;
+    color: var(--color_marron);
     /* background-color: orange; */
     width: 100%;
     height: auto;
     padding: 2% 0;
 }
+
+.rrss a{
+    margin: 0 10px; 
+    
+}
+
+
