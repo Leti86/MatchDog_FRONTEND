@@ -1,19 +1,32 @@
+.navbar-light{
+    background-color: lightgray;
+    margin: auto;
+}
 
-
-#navbarNavAltMarkup{
-    justify-content: flex-end;
-    
+.navbar-toggler{
+    margin: 10px 50px;
 }
 
 a{
-    margin: 0 20px;
-    
+    font-family: var(--fuente_titulos);
+    font-size: 1.3rem;
+    margin-left: 50px;
 }
 
+.navbar-brand{
+    padding: 0;
+    margin-left: 50px;
+}
 
 .imagen{
-    width: 40%;
+    max-width: 40%;
 }
+
+
 .activa{
     font-weight: bold;
 }
+
+
+
+
