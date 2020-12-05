@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Perro, PerrosService } from '../servicios/perros.service';
 
 
 @Component({
@@ -7,14 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./animales.component.css']
 })
 export class AnimalesComponent implements OnInit {
+
+  perros: Perro[];
+
   filtroEdad: string;
   filtroTamano: string;
-  constructor() {
+
+  constructor(private perrosService: PerrosService) {
     this.filtroEdad = '';
     this.filtroTamano = '';
   }
 
   ngOnInit(): void {
+    this.perrosService.getAll()
+      .then(response => {
+        this.perros = response
+      })
+      .catch(error => console.log(error));
   }
 
   onClickEdad(pEdad: string) {
