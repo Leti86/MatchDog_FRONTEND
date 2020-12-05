@@ -49,6 +49,19 @@ export class AnimalesComponent implements OnInit {
       .catch(error => console.log(error));
   }
 
+  //devuelve perros por edad y tamaño: podemos llamarla con un condicional? Si algún boton de EDAD está pulsado, que llame a esta función; si no, que llame solo a getdogsbysize
+  onClickEdadTamano(pEdad: string, pTamano: string) {
+    this.perrosService.getDogsByAgeAndSize(pEdad, pTamano)
+      .then(response => {
+        this.perros = response
+      })
+      .catch(error => console.log(error));
+  }
+
+  onClickVerify() {
+    //esta función debe verificar si el botón de la edad está pulsado o no para saber si lanzar la función de buscar solo por tamaño o la de buscar por tamaño y edad
+  }
+
 
 
 }

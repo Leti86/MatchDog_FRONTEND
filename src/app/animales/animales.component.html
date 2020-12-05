@@ -4,7 +4,7 @@
 
         <p><span>Haznos saber lo que buscas.</span></p>
 
-        <p>Selecciona la edad: {{filtroEdad}}</p>
+        <p>Selecciona la edad:</p>
         <div class="row opciones">
             <button class="btn opcion" value="cachorro" [ngClass]="{seleccionado:(filtroEdad=='cachorro')}"
                 (click)="onClickEdad('cachorro')">Cachorro</button>
@@ -14,10 +14,12 @@
 
 
 
-        <p>Selecciona el tamaño: {{filtroTamano}}</p>
+        <p>Selecciona el tamaño:</p>
         <div class="row opciones">
             <button class="btn opcion" value="pequeno" [ngClass]="{seleccionado:(filtroTamano=='pequeno')}"
-                (click)="onClickTamano('pequeno')">Pequeño</button>
+                (click)="onClickVerify()">Pequeño</button>
+            <!-- (click)="onClickTamano('pequeno') -->
+
             <button class="btn opcion" value="mediano" [ngClass]="{seleccionado:(filtroTamano=='mediano')}"
                 (click)="onClickTamano('mediano')">Mediano</button>
             <button class="btn opcion" value="grande" [ngClass]="{seleccionado:(filtroTamano=='grande')}"
