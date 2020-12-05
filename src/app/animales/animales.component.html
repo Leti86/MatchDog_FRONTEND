@@ -4,7 +4,7 @@
 
         <p><span>Haznos saber lo que buscas.</span></p>
 
-        <p>Selecciona la edad: ({{filtroEdad}})</p>
+        <p>Selecciona la edad: {{filtroEdad}}</p>
         <div class="row opciones">
             <button class="btn opcion" value="cachorro" [ngClass]="{seleccionado:(filtroEdad=='cachorro')}"
                 (click)="onClickEdad('cachorro')">Cachorro</button>
@@ -14,7 +14,7 @@
 
 
 
-        <p>Selecciona el tamaño: ({{filtroTamano}})</p>
+        <p>Selecciona el tamaño: {{filtroTamano}}</p>
         <div class="row opciones">
             <button class="btn opcion" value="pequeno" [ngClass]="{seleccionado:(filtroTamano=='pequeno')}"
                 (click)="onClickTamano('pequeno')">Pequeño</button>
@@ -34,10 +34,27 @@
     <div class="row tarjetas_perros">
 
         <div class="card perro">
-            <!-- <div class="imagenperro"
+            <img src="https://www.elcomercio.com/files/article_main/uploads/2019/11/19/5dd46f53c97eb.jpeg"
+                class="card-img">
+            <div class="card-img-overlay">
+                <h5 class="card-title">PONGO - Labrador macho, 5 años</h5>
+                <p class="card-text">Protectora: ACUNR</p>
+                <p class="card-text">Madrid.</p>
+
+                <button type="button" class="btn btn-outline-dark">Añadir a favoritos <i
+                        class="fas fa-star"></i></button>
+            </div>
+
+        </div>
+
+
+
+
+        <!-- <div class="card perro">
+             <div class="imagenperro"
                 [ngStyle]="{backgroundImage:'url(https://www.elcomercio.com/files/article_main/uploads/2019/11/19/5dd46f53c97eb.jpeg)'}">
 
-            </div> -->
+            </div>
 
             <img src="https://www.elcomercio.com/files/article_main/uploads/2019/11/19/5dd46f53c97eb.jpeg"
                 class="card-img">
@@ -51,6 +68,8 @@
             </div>
 
         </div>
+
+
         <div class="card perro">
             <img src="https://www.elcomercio.com/files/article_main/uploads/2019/11/19/5dd46f53c97eb.jpeg"
                 class="card-img">
@@ -102,20 +121,7 @@
                         class="fas fa-star"></i></button>
             </div>
 
-        </div>
-        <div class="card perro">
-            <img src="https://www.elcomercio.com/files/article_main/uploads/2019/11/19/5dd46f53c97eb.jpeg"
-                class="card-img">
-            <div class="card-img-overlay">
-                <h5 class="card-title">PONGO - Labrador macho, 5 años</h5>
-                <p class="card-text">Protectora: ACUNR</p>
-                <p class="card-text">Madrid.</p>
-
-                <button type="button" class="btn btn-outline-dark">Añadir a favoritos <i
-                        class="fas fa-star"></i></button>
-            </div>
-
-        </div>
+        </div> -->
 
     </div>
 
