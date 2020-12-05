@@ -27,12 +27,26 @@ export class AnimalesComponent implements OnInit {
       .catch(error => console.log(error));
   }
 
+  //devuelve perros por edad: cachorro-adulto
   onClickEdad(pEdad: string) {
     this.filtroEdad = pEdad;
+
+    this.perrosService.getDogsByAge(pEdad)
+      .then(response => {
+        this.perros = response
+      })
+      .catch(error => console.log(error));
   }
 
+  //devuelve perros por tamaño
   onClickTamano(pTamano: string) {
     this.filtroTamano = pTamano;
+
+    this.perrosService.getDogsBySize(pTamano)
+      .then(response => {
+        this.perros = response
+      })
+      .catch(error => console.log(error));
   }
 
 

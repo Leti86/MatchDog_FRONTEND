@@ -14,7 +14,9 @@ export interface Perro {
   descripcion: string,
   imagen: string,
   nombre_perro: string,
-  fk_protectora: number
+  nombre: string,
+  provincia: string,
+  localidad: string
 }
 
 
@@ -25,6 +27,7 @@ export interface Perro {
 export class PerrosService {
 
   private baseUrl: string;
+
   constructor(private httpClient: HttpClient) {
     this.baseUrl = "http://localhost:3000/api/perros";
   }
@@ -32,4 +35,18 @@ export class PerrosService {
   getAll(): Promise<Perro[]> {
     return this.httpClient.get<Perro[]>(this.baseUrl).toPromise();
   }
+
+  getDogsByAge(pEdad): Promise<Perro[]> {
+    return this.httpClient.get<Perro[]>(`${this.baseUrl}/edad/${pEdad}`).toPromise();
+  }
+
+  getDogsBySize(pTamano): Promise<Perro[]> {
+    return this.httpClient.get<Perro[]>(`${this.baseUrl}/tamano/${pTamano}`).toPromise();
+  }
+
+  //esta función nunca se llama porque no tiene un botón para llamarla directamente
+  getDogsByAgeAndSize(pEdad, pTamano): Promise<Perro[]> {
+    return this.httpClient.get<Perro[]>(`${this.baseUrl}/${pEdad}/${pTamano}`).toPromise();
+  }
+
 }

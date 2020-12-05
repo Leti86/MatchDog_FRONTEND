@@ -33,13 +33,15 @@
 
     <div class="row tarjetas_perros">
 
+
         <div class="card perro" *ngFor="let perro of perros">
-            <img src={{perro.imagen}}>
+            <!-- como sacar la imagen:problema  -->
+            <img src="https://www.animaleshoy.com/imagenes/Curiosidades-sobre-los-perros.jpg" class="card-img">
             <div class="card-img-overlay">
                 <h5 class="card-title">{{perro.nombre_perro}} - {{perro.raza}} {{perro.sexo}}, {{perro.edad_numero}}
                     años</h5>
-                <p class="card-text">Protectora: {{perro.fk_protectora}} pipe aqui</p>
-                <p class="card-text">sacar ciudad</p>
+                <p class="card-text">Protectora: {{perro.nombre}}</p>
+                <p class="card-text">{{perro.localidad}}, {{perro.provincia}}</p>
 
                 <button type="button" class="btn btn-outline-dark">Añadir a favoritos <i
                         class="fas fa-star"></i></button>
@@ -50,78 +52,7 @@
 
 
 
-        <!-- <div class="card perro">
-             <div class="imagenperro"
-                [ngStyle]="{backgroundImage:'url(https://www.elcomercio.com/files/article_main/uploads/2019/11/19/5dd46f53c97eb.jpeg)'}">
 
-            </div>
-
-            <img src="https://www.elcomercio.com/files/article_main/uploads/2019/11/19/5dd46f53c97eb.jpeg"
-                class="card-img">
-            <div class="card-img-overlay">
-                <h5 class="card-title">PONGO - Labrador macho, 5 años</h5>
-                <p class="card-text">Protectora: ACUNR</p>
-                <p class="card-text">Madrid.</p>
-
-                <button type="button" class="btn btn-outline-dark">Añadir a favoritos <i
-                        class="fas fa-star"></i></button>
-            </div>
-
-        </div>
-
-
-        <div class="card perro">
-            <img src="https://www.elcomercio.com/files/article_main/uploads/2019/11/19/5dd46f53c97eb.jpeg"
-                class="card-img">
-            <div class="card-img-overlay">
-                <h5 class="card-title">PONGO - Labrador macho, 5 años</h5>
-                <p class="card-text">Protectora: ACUNR</p>
-                <p class="card-text">Madrid.</p>
-
-                <button type="button" class="btn btn-outline-dark">Añadir a favoritos <i
-                        class="fas fa-star"></i></button>
-            </div>
-
-        </div>
-        <div class="card perro">
-            <img src="https://www.elcomercio.com/files/article_main/uploads/2019/11/19/5dd46f53c97eb.jpeg"
-                class="card-img">
-            <div class="card-img-overlay">
-                <h5 class="card-title">PONGO - Labrador macho, 5 años</h5>
-                <p class="card-text">Protectora: ACUNR</p>
-                <p class="card-text">Madrid.</p>
-
-                <button type="button" class="btn btn-outline-dark">Añadir a favoritos <i
-                        class="fas fa-star"></i></button>
-            </div>
-
-        </div>
-        <div class="card perro">
-            <img src="https://www.elcomercio.com/files/article_main/uploads/2019/11/19/5dd46f53c97eb.jpeg"
-                class="card-img">
-            <div class="card-img-overlay">
-                <h5 class="card-title">PONGO - Labrador macho, 5 años</h5>
-                <p class="card-text">Protectora: ACUNR</p>
-                <p class="card-text">Madrid.</p>
-
-                <button type="button" class="btn btn-outline-dark">Añadir a favoritos <i
-                        class="fas fa-star"></i></button>
-            </div>
-
-        </div>
-        <div class="card perro">
-            <img src="https://www.elcomercio.com/files/article_main/uploads/2019/11/19/5dd46f53c97eb.jpeg"
-                class="card-img">
-            <div class="card-img-overlay">
-                <h5 class="card-title">PONGO - Labrador macho, 5 años</h5>
-                <p class="card-text">Protectora: ACUNR</p>
-                <p class="card-text">Madrid.</p>
-
-                <button type="button" class="btn btn-outline-dark">Añadir a favoritos <i
-                        class="fas fa-star"></i></button>
-            </div>
-
-        </div> -->
 
     </div>
 
