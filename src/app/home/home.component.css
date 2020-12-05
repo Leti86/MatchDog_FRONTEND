@@ -118,7 +118,6 @@ p{
     display: flex;
     align-items: center;
     justify-content: center;
-    
     margin: 2rem 0;
 }
 
@@ -148,13 +147,18 @@ p{
 .imagen_quien{
     width: 150px;
     height: 150px;
-    background-color: green;
-    background-image: url('https://i.pinimg.com/originals/d8/47/b6/d847b6a520056df8b975f9e1e6c5f362.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     border: 2px solid lightslategray;
     border-radius: 50%;
+}
+.irene{
+    background-image: url('../../../images/foto_irene_cv_recortada.jpg');
+}
+
+.leti{
+    background-image: url('https://cdn.pixabay.com/photo/2017/06/18/21/37/rose-2417334_960_720.jpg');
 }
 
 
