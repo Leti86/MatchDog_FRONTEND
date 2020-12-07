@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Perro, PerrosService } from '../servicios/perros.service';
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 
 @Component({
   selector: 'app-animales',
@@ -21,7 +21,7 @@ export class AnimalesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.perrosService.getAll()
+    this.perrosService.getAllDogs()
       .then(response => {
         this.perros = response
       })
@@ -71,7 +71,7 @@ export class AnimalesComponent implements OnInit {
   onClickAddFavourite(pPerro) {
     this.perrosFavoritos.push(pPerro);
     console.log(this.perrosFavoritos);
-    swal('Perro añadido a la lista', '¡Sigue explorando!', "success");
+    // swal('Perro añadido a la lista', '¡Sigue explorando!', "success"); DA ERROR AL HACER EL NG SERVE, MIRAR POR QUÉ
 
   }
 

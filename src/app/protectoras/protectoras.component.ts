@@ -19,6 +19,7 @@ export class ProtectorasComponent implements OnInit {
         this.protectoras = response;
       })
       .catch(error => console.log(error));
+
   }
 
 }

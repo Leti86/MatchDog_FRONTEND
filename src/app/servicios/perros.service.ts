@@ -32,7 +32,7 @@ export class PerrosService {
     this.baseUrl = "http://localhost:3000/api/perros";
   }
 
-  getAll(): Promise<Perro[]> {
+  getAllDogs(): Promise<Perro[]> {
     return this.httpClient.get<Perro[]>(this.baseUrl).toPromise();
   }
 
