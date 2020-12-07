@@ -37,7 +37,7 @@
 
         <div class="card perro" *ngFor="let perro of perros">
             <!-- como sacar la imagen:problema  -->
-            <img src="https://www.animaleshoy.com/imagenes/Curiosidades-sobre-los-perros.jpg" class="card-img">
+            <img src={{perro.imagen}} class="card-img">
             <div class="card-img-overlay">
                 <h5 class="card-title">{{perro.nombre_perro}} - {{perro.raza}} {{perro.sexo}}, {{perro.edad_numero}}
                     años</h5>
