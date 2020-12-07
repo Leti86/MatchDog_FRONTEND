@@ -17,6 +17,7 @@ export class ProtectorasComponent implements OnInit {
     this.protectoraService.getAll()
       .then(response => {
         this.protectoras = response;
+        console.log(response);
       })
       .catch(error => console.log(error));
   }
