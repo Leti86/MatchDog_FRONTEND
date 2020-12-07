@@ -17,8 +17,7 @@
         <p>Selecciona el tamaño:</p>
         <div class="row opciones">
             <button class="btn opcion" value="pequeno" [ngClass]="{seleccionado:(filtroTamano=='pequeno')}"
-                (click)="onClickVerify()">Pequeño</button>
-            <!-- (click)="onClickTamano('pequeno') -->
+                (click)="onClickTamano('pequeno')">Pequeño</button>
 
             <button class="btn opcion" value="mediano" [ngClass]="{seleccionado:(filtroTamano=='mediano')}"
                 (click)="onClickTamano('mediano')">Mediano</button>

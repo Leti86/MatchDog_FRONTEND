@@ -27,29 +27,37 @@ export class AnimalesComponent implements OnInit {
       .catch(error => console.log(error));
   }
 
-  //devuelve perros por edad: cachorro-adulto
+  //devuelve perros por edad: cachorro-adulto FUNCIONA BIEN
   onClickEdad(pEdad: string) {
     this.filtroEdad = pEdad;
 
-    this.perrosService.getDogsByAge(pEdad)
-      .then(response => {
-        this.perros = response
-      })
-      .catch(error => console.log(error));
+    if (this.filtroTamano == '') {
+      this.perrosService.getDogsByAge(pEdad)
+        .then(response => {
+          this.perros = response
+        })
+        .catch(error => console.log(error));
+    } else {
+      this.onClickEdadTamano(pEdad, this.filtroTamano);
+    }
   }
 
-  //devuelve perros por tamaño
+  //devuelve perros por tamaño FUNCIONA BIEN
   onClickTamano(pTamano: string) {
     this.filtroTamano = pTamano;
 
-    this.perrosService.getDogsBySize(pTamano)
-      .then(response => {
-        this.perros = response
-      })
-      .catch(error => console.log(error));
+    if (this.filtroEdad == '') {
+      this.perrosService.getDogsBySize(pTamano)
+        .then(response => {
+          this.perros = response
+        })
+        .catch(error => console.log(error));
+    } else {
+      this.onClickEdadTamano(this.filtroEdad, pTamano);
+    }
   }
 
-  //devuelve perros por edad y tamaño: podemos llamarla con un condicional? Si algún boton de EDAD está pulsado, que llame a esta función; si no, que llame solo a getdogsbysize
+  //devuelve perros por edad y tamaño FUNCIONA BIEN
   onClickEdadTamano(pEdad: string, pTamano: string) {
     this.perrosService.getDogsByAgeAndSize(pEdad, pTamano)
       .then(response => {
@@ -58,9 +66,7 @@ export class AnimalesComponent implements OnInit {
       .catch(error => console.log(error));
   }
 
-  onClickVerify() {
-    //esta función debe verificar si el botón de la edad está pulsado o no para saber si lanzar la función de buscar solo por tamaño o la de buscar por tamaño y edad
-  }
+
 
 
 
