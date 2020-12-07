@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Perro, PerrosService } from '../servicios/perros.service';
-
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-animales',
@@ -8,7 +8,7 @@ import { Perro, PerrosService } from '../servicios/perros.service';
   styleUrls: ['./animales.component.css']
 })
 export class AnimalesComponent implements OnInit {
-
+  perrosFavoritos: Perro[];
   perros: Perro[];
 
   filtroEdad: string;
@@ -17,6 +17,7 @@ export class AnimalesComponent implements OnInit {
   constructor(private perrosService: PerrosService) {
     this.filtroEdad = '';
     this.filtroTamano = '';
+    this.perrosFavoritos = [];
   }
 
   ngOnInit(): void {
@@ -66,7 +67,13 @@ export class AnimalesComponent implements OnInit {
       .catch(error => console.log(error));
   }
 
+  //este array de perros es el que tendrá cada adoptante. puede añadir perros a la lista personal.
+  onClickAddFavourite(pPerro) {
+    this.perrosFavoritos.push(pPerro);
+    console.log(this.perrosFavoritos);
+    swal('Perro añadido a la lista', '¡Sigue explorando!', "success");
 
+  }
 
 
 
