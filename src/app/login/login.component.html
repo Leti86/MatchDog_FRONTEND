@@ -5,7 +5,7 @@
             <p>Así podrás solicitar la adopción de perros y las protectoras podrán ver tu perfil.</p>
         </div>
 
-        <form>
+        <form [formGroup]="formRegistroAdoptante" (ngSubmit)="onSubmit()">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>Nombre</label>

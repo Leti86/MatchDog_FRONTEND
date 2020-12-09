@@ -24,6 +24,8 @@ export interface Perro {
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class PerrosService {
 
   private baseUrl: string;
@@ -31,6 +33,7 @@ export class PerrosService {
   constructor(private httpClient: HttpClient) {
     this.baseUrl = "http://localhost:3000/api/perros";
   }
+
 
   getAllDogs(): Promise<Perro[]> {
     return this.httpClient.get<Perro[]>(this.baseUrl).toPromise();
