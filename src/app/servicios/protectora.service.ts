@@ -39,4 +39,8 @@ export class ProtectoraService {
     return this.httpClient.post<Protectora>(this.baseUrl, formsValues).toPromise();
   }
 
+  getLatitudeLongitude() {
+    return this.httpClient.get(`${this.baseUrl}/coordenadas/coordenadas`).toPromise();
+  }
+
 }
