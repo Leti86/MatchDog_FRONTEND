@@ -35,6 +35,9 @@ h2{
 }
 .noticias .noticia img{
     cursor: pointer;
+    width: 100%;
+    height: auto;
+    
 }
 
 
@@ -61,6 +64,15 @@ h2{
     color: var(--color_marron);
     
 
+}
+
+.buscador{
+    margin: 5% 0 15% 0;   
+    
+}
+
+.buscador h5{
+    text-align: center;
 }
 
 .post_recientes{
