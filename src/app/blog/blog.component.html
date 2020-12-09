@@ -2,29 +2,24 @@
     <h2>NUESTRO BLOG</h2>
     <div class="row">
         <section class="col-md-9 col-12 d-md-block noticias">
-            <article class="noticia">
+            <article class="noticia" *ngFor="let post of arrPost">
                 <div class="card mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-4 imagen">
-                            <img src="https://www.mundoperros.es/wp-content/uploads/2016/05/perro_comiendo-830x588.jpg"
-                                class="card-img">
+                            <img src={{post.imagen}} class="card-img">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h4 class="card-title">La importancia de la LLAMADA</h4>
-                                <p class="card-text">Es tanta la importancia de la llamada que puede llegar incluso a
-                                    salvar la vida de tu perro en determinadas circunstancias. Enseñar al perro a acudir
-                                    a tu llamada es uno de los ejercicios más importantes de la obediencia canina. Los
-                                    perros que vienen cuando se les llama tienen más libertad para jugar con sus amigos
-                                    en el parque, ir a pasear al campo y estar seguros en cualquier lugar.</p>
-                                <p class="card-text"><small class="text-muted">Fecha publicacion</small></p>
-                                <p class="card-text"><small class="text-muted">Categoria</small></p>
+                                <h4 class="card-title">{{post.titulo}}</h4>
+                                <p class="card-text">{{post.texto}}</p>
+                                <p class="card-text"><small class="text-muted">{{post.fecha}}</small></p>
+                                <p class="card-text"><small class="text-muted">{{post.categoria}}</small></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </article>
-            <article class="noticia">
+            <!-- <article class="noticia">
                 <div class="card mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-4 imagen">
@@ -104,7 +99,7 @@
                         </div>
                     </div>
                 </div>
-            </article>
+            </article> -->
             <button type="button" class="btn btn-secondary btn-sm anterior"><i
                     class="fas fa-angle-double-left"></i></button>
             <button type="button" class="btn btn-secondary btn-sm float-right siguiente"><i
@@ -122,32 +117,39 @@
             <div class="container-fluid post_recientes">
                 <h5>ENTRADAS RECIENTES</h5>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cuando tu animal SE PIERDE</li>
-                    <li class="list-group-item">Golpe de CALOR en el perro </li>
-                    <li class="list-group-item">La importancia de la LLAMADA</li>
-                    <li class="list-group-item">¿Tu perro se restriega sobre la hierba?</li>
-                    <li class="list-group-item">SEGURIDAD en la calle</li>
+                    <a href="">
+                        <li class="list-group-item">Cuando tu animal SE PIERDE</li>
+                    </a>
+                    <a>
+                        <li class="list-group-item">Golpe de CALOR en el perro </li>
+                    </a>
+                    <a>
+                        <li class="list-group-item">La importancia de la LLAMADA</li>
+                    </a>
+                    <a>
+                        <li class="list-group-item">¿Tu perro se restriega sobre la hierba?</li>
+                    </a>
+                    <a>
+                        <li class="list-group-item">SEGURIDAD en la calle</li>
+                    </a>
+
                 </ul>
             </div>
             <div class="container-fluid categorias">
                 <h5>CATEGORIAS</h5>
                 <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Cuidado
+                    <li class="list-group-item d-flex justify-content-between align-items-center"
+                        (click)="onClickAll()">
+                        Todas las categorias
                         <span class="badge badge-warning badge-pill">14</span>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Alimentacioon
-                        <span class="badge badge-warning badge-pill">2</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Paseo
-                        <span class="badge badge-warning badge-pill">1</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Comportamiento
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center"
+                        *ngFor="let categoria of arrCategorias" (click)="onClick(categoria)">
+                        {{categoria}}
                         <span class="badge badge-warning badge-pill">14</span>
                     </li>
+
                 </ul>
             </div>
             <div class="container-fluid rrss">
