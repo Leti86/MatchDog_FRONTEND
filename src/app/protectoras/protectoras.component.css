@@ -112,7 +112,11 @@ span{
     
 
 }
-
+.logo_protectora{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .card-body{
     line-height: 1.1em;

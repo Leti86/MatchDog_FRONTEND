@@ -25,8 +25,8 @@
         <div class="card mb-3 detalle_protectoras" style="max-width: 290px; height: 170px"
             *ngFor="let protectora of protectoras | slice:0:3">
             <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="protectora.imagen" class="card-img">
+                <div class="logo_protectora col-md-4">
+                    <img src={{protectora.imagen}} class="card-img">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -46,9 +46,8 @@
         <div class="card mb-3 detalle_protectoras" style="max-width: 290px; height: 170px"
             *ngFor="let protectora of protectoras | slice:3:6">
             <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="https://www.albergaria.es/media/logos/medium/protectora-de-asturias-1453886309.jpg"
-                        class="card-img">
+                <div class="logo_protectora col-md-4">
+                    <img src={{protectora.imagen}} class="card-img">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">

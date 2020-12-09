@@ -26,6 +26,7 @@ export class AnimalesComponent implements OnInit {
         this.perros = response
       })
       .catch(error => console.log(error));
+    console.log('SE EJECUTA EL NGONINIT');
   }
 
   //devuelve perros por edad: cachorro-adulto FUNCIONA BIEN
