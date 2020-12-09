@@ -20,6 +20,7 @@ export class ProtectorasComponent implements OnInit {
         console.log(response);
       })
       .catch(error => console.log(error));
+
   }
 
 }

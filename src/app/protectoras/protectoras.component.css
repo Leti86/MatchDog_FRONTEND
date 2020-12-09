@@ -99,6 +99,7 @@ span{
 
 .detalle_protectoras{
     overflow:hidden;
+    
         
 }
 
@@ -159,6 +160,9 @@ span{
 }
 
 .titulo{
+    color: whitesmoke;
+}
+.titulo h2{
     color: whitesmoke;
 }
 

@@ -17,8 +17,7 @@
         <p>Selecciona el tamaño:</p>
         <div class="row opciones">
             <button class="btn opcion" value="pequeno" [ngClass]="{seleccionado:(filtroTamano=='pequeno')}"
-                (click)="onClickVerify()">Pequeño</button>
-            <!-- (click)="onClickTamano('pequeno') -->
+                (click)="onClickTamano('pequeno')">Pequeño</button>
 
             <button class="btn opcion" value="mediano" [ngClass]="{seleccionado:(filtroTamano=='mediano')}"
                 (click)="onClickTamano('mediano')">Mediano</button>
@@ -35,32 +34,22 @@
 
     <div class="row tarjetas_perros">
 
-
-        <div class="card perro" *ngFor="let perro of perros">
-            <!-- como sacar la imagen:problema  -->
-            <img src="https://www.animaleshoy.com/imagenes/Curiosidades-sobre-los-perros.jpg" class="card-img">
-            <div class="card-img-overlay">
-                <h5 class="card-title">{{perro.nombre_perro}} - {{perro.raza}} {{perro.sexo}}, {{perro.edad_numero}}
-                    años</h5>
-                <p class="card-text">Protectora: {{perro.nombre}}</p>
-                <p class="card-text">{{perro.localidad}}, {{perro.provincia}}</p>
-
-                <button type="button" class="btn btn-outline-dark">Añadir a favoritos <i
-                        class="fas fa-star"></i></button>
+        <div class="contenedor" *ngFor="let perro of perros">
+            <div class="imagen" style="background-image: url({{perro.imagen}})">
             </div>
+            <div class="velo">
+                <h3>{{perro.nombre_perro}}</h3>
+                <p>{{perro.raza}} {{perro.sexo}}, {{perro.edad_numero}} años</p>
+                <p>Protectora: {{perro.nombre}}</p>
+                <p>{{perro.localidad}}, {{perro.provincia}}</p>
 
+                <button type="button" class="btn btn-outline-dark" (click)="onClickAddFavourite(perro)">Añadir a
+                    favoritos <i class="fas fa-star"></i></button>
+            </div>
         </div>
 
 
-
-
-
-
     </div>
-
-
-
-
 
 
 </div>

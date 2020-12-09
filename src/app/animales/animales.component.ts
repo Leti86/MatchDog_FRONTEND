@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Perro, PerrosService } from '../servicios/perros.service';
-
+// import swal from 'sweetalert';
 
 @Component({
   selector: 'app-animales',
@@ -8,7 +8,7 @@ import { Perro, PerrosService } from '../servicios/perros.service';
   styleUrls: ['./animales.component.css']
 })
 export class AnimalesComponent implements OnInit {
-
+  perrosFavoritos: Perro[];
   perros: Perro[];
 
   filtroEdad: string;
@@ -17,39 +17,48 @@ export class AnimalesComponent implements OnInit {
   constructor(private perrosService: PerrosService) {
     this.filtroEdad = '';
     this.filtroTamano = '';
+    this.perrosFavoritos = [];
   }
 
   ngOnInit(): void {
-    this.perrosService.getAll()
+    this.perrosService.getAllDogs()
       .then(response => {
         this.perros = response
       })
       .catch(error => console.log(error));
   }
 
-  //devuelve perros por edad: cachorro-adulto
+  //devuelve perros por edad: cachorro-adulto FUNCIONA BIEN
   onClickEdad(pEdad: string) {
     this.filtroEdad = pEdad;
 
-    this.perrosService.getDogsByAge(pEdad)
-      .then(response => {
-        this.perros = response
-      })
-      .catch(error => console.log(error));
+    if (this.filtroTamano == '') {
+      this.perrosService.getDogsByAge(pEdad)
+        .then(response => {
+          this.perros = response
+        })
+        .catch(error => console.log(error));
+    } else {
+      this.onClickEdadTamano(pEdad, this.filtroTamano);
+    }
   }
 
-  //devuelve perros por tamaño
+  //devuelve perros por tamaño FUNCIONA BIEN
   onClickTamano(pTamano: string) {
     this.filtroTamano = pTamano;
 
-    this.perrosService.getDogsBySize(pTamano)
-      .then(response => {
-        this.perros = response
-      })
-      .catch(error => console.log(error));
+    if (this.filtroEdad == '') {
+      this.perrosService.getDogsBySize(pTamano)
+        .then(response => {
+          this.perros = response
+        })
+        .catch(error => console.log(error));
+    } else {
+      this.onClickEdadTamano(this.filtroEdad, pTamano);
+    }
   }
 
-  //devuelve perros por edad y tamaño: podemos llamarla con un condicional? Si algún boton de EDAD está pulsado, que llame a esta función; si no, que llame solo a getdogsbysize
+  //devuelve perros por edad y tamaño FUNCIONA BIEN
   onClickEdadTamano(pEdad: string, pTamano: string) {
     this.perrosService.getDogsByAgeAndSize(pEdad, pTamano)
       .then(response => {
@@ -58,8 +67,12 @@ export class AnimalesComponent implements OnInit {
       .catch(error => console.log(error));
   }
 
-  onClickVerify() {
-    //esta función debe verificar si el botón de la edad está pulsado o no para saber si lanzar la función de buscar solo por tamaño o la de buscar por tamaño y edad
+  //este array de perros es el que tendrá cada adoptante. puede añadir perros a la lista personal.
+  onClickAddFavourite(pPerro) {
+    this.perrosFavoritos.push(pPerro);
+    console.log(this.perrosFavoritos);
+    // swal('Perro añadido a la lista', '¡Sigue explorando!', "success"); DA ERROR AL HACER EL NG SERVE, MIRAR POR QUÉ
+
   }
 
 
