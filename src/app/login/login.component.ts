@@ -19,8 +19,9 @@ export class LoginComponent implements OnInit {
       localidad: new FormControl('', Validators.required),
       provincia: new FormControl('', Validators.required),
       telefono: new FormControl('', [Validators.required, Validators.minLength(9)]),
-      email: new FormControl('', Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)),
+      email: new FormControl('', [Validators.required, Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)]),
       tiene_gato: new FormControl('', Validators.required),
+      tipo_vivienda: new FormControl('', Validators.required),
       espacio_exterior: new FormControl('', Validators.required),
       medida_espacio_exterior: new FormControl(''), //no requerido
       tipo_espacio_exterior: new FormControl(''), //no requerido

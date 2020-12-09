@@ -10,34 +10,62 @@
                 <div class="form-group col-md-6">
                     <label>Nombre</label>
                     <input type="text" class="form-control" name="nombre" formControlName="nombre">
+                    <p class="text-dark"
+                        *ngIf="formRegistroAdoptante.get('nombre').hasError('required') && formRegistroAdoptante.get('nombre').touched">
+                        Por favor, indíquenos su nombre.
+                    </p>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Apellidos</label>
                     <input type="text" class="form-control" name="apellidos" formControlName="apellidos">
+                    <p class="text-dark"
+                        *ngIf="formRegistroAdoptante.get('apellidos').hasError('required') && formRegistroAdoptante.get('apellidos').touched">
+                        Por favor, indíquenos sus apellidos.
+                    </p>
                 </div>
             </div>
             <div class="form-group">
                 <label>Dirección</label>
                 <input type="text" class="form-control" name="direccion" formControlName="direccion">
+                <p class="text-dark"
+                    *ngIf="formRegistroAdoptante.get('direccion').hasError('required') && formRegistroAdoptante.get('direccion').touched">
+                    Debe introducir una dirección.
+                </p>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>Localidad</label>
                     <input type="text" class="form-control" name="localidad" formControlName="localidad">
+                    <p class="text-dark"
+                        *ngIf="formRegistroAdoptante.get('localidad').hasError('required') && formRegistroAdoptante.get('localidad').touched">
+                        Introduzca su localidad.
+                    </p>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Provincia</label>
                     <input type="text" class="form-control" name="provincia" formControlName="provincia">
+                    <p class="text-dark"
+                        *ngIf="formRegistroAdoptante.get('provincia').hasError('required') && formRegistroAdoptante.get('provincia').touched">
+                        Introduzca su provincia.
+                    </p>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>Telefono</label>
                     <input type="text" class="form-control" name="telefono" formControlName="telefono">
+                    <p class="text-dark"
+                        *ngIf="formRegistroAdoptante.get('telefono').hasError('required') && formRegistroAdoptante.get('telefono').touched">
+                        Introduzca un teléfono de 9 dígitos.
+                    </p>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Email</label>
                     <input type="email" class="form-control" name="email" formControlName="email">
+                    <p class="text-dark"
+                        *ngIf="formRegistroAdoptante.get('email').hasError('required') && formRegistroAdoptante.get('email').touched">
+                        Por favor, introduzca un email válido.
+                    </p>
                 </div>
             </div>
             <div class="form-row">
@@ -48,6 +76,10 @@
                         <option value="si">SI</option>
                         <option value="no">NO</option>
                     </select>
+                    <p class="text-dark"
+                        *ngIf="formRegistroAdoptante.get('tiene_gato').hasError('required') && formRegistroAdoptante.get('tiene_gato').touched">
+                        Este campo es requerido.
+                    </p>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Tipo de vivienda</label>
@@ -56,6 +88,10 @@
                         <option value="piso">Piso</option>
                         <option value="casa_chalet">Casa/Chalet</option>
                     </select>
+                    <p class="text-dark"
+                        *ngIf="formRegistroAdoptante.get('tipo_vivienda').hasError('required') && formRegistroAdoptante.get('tipo_vivienda').touched">
+                        Este campo es requerido.
+                    </p>
                 </div>
             </div>
             <div class="form-group">
@@ -95,6 +131,10 @@
                 <div class="form-group col-md-8">
                     <label>Fotos de la casa</label>
                     <input type="url" class="form-control" name="fotos_casa" formControlName="fotos_casa">
+                    <p class="text-dark"
+                        *ngIf="formRegistroAdoptante.get('fotos_casa').hasError('required') && formRegistroAdoptante.get('fotos_casa').touched">
+                        Introduzca una url donde podamos acceder a sus fotos.
+                    </p>
                 </div>
 
             </div>
