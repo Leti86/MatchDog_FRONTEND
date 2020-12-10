@@ -34,7 +34,7 @@ export class BlogService {
   }
 
   getPostByDate(): Promise<Post[]> {
-    return this.httpClient.get<Post[]>(`${this.baseUrl}/recientes`).toPromise();
+    return this.httpClient.get<Post[]>(`${this.baseUrl}/fecha/recientes`).toPromise();
   }
 
 
