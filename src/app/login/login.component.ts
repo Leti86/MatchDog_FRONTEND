@@ -39,7 +39,8 @@ export class LoginComponent implements OnInit {
         Validators.required),
       espacio_exterior: new FormControl('',
         Validators.required),
-      medida_espacio_exterior: new FormControl(''), //dato no obligatorio
+      medida_espacio_exterior: new FormControl('',
+        [Validators.min(0), this.numberValidator]), //dato no obligatorio
       tipo_espacio_exterior: new FormControl(''), //dato no obligatorio
       fotos_casa: new FormControl('',
         Validators.required),
@@ -52,12 +53,27 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.adoptantesService.create(this.formRegistroAdoptante.value)
-      .then(response => {
-        console.log(response);
+    console.log(this.formRegistroAdoptante.value)
+    // this.adoptantesService.create(this.formRegistroAdoptante.value)
+    //   .then(response => {
+    //     console.log(response);
 
-      })
-      .catch(error => console.log(error));
+    //   })
+    //   .catch(error => console.log(error));
+
+    //resetear los valores, por qué no lo hace?
+    this.formRegistroAdoptante.value.reset;
   }
+
+
+  //Validadores personalizados: hacer un validador que sirva para el teléfono y los metros cuadrados, que solo admita números, no letras ni tampoco mezcla de núms y letras NO FUNCIONA, POR QUE?
+  numberValidator(control: FormControl) {
+    const metrosCuadrados = control.value;
+    if (!isNaN(metrosCuadrados)) {
+      return null;
+    }
+
+  }
+
 
 }
