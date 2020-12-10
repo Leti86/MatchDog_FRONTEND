@@ -43,11 +43,14 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label>Provincia</label>
-                    <input type="text" class="form-control" name="provincia" formControlName="provincia">
+                    <select class="form-control" formControlName="provincia">
+                        <option selected value="madrid">Madrid</option>
+                    </select>
                     <p class="text-dark"
                         *ngIf="formRegistroAdoptante.get('provincia').hasError('required') && formRegistroAdoptante.get('provincia').touched">
-                        Introduzca su provincia.
+                        Por favor, indíquenos su provincia
                     </p>
+
                 </div>
             </div>
             <div class="form-row">
@@ -55,8 +58,12 @@
                     <label>Telefono</label>
                     <input type="text" class="form-control" name="telefono" formControlName="telefono">
                     <p class="text-dark"
-                        *ngIf="formRegistroAdoptante.get('telefono').hasError('required') && formRegistroAdoptante.get('telefono').touched">
+                        *ngIf="formRegistroAdoptante.get('telefono').hasError('minlength') && formRegistroAdoptante.get('telefono').touched">
                         Introduzca un teléfono de 9 dígitos.
+                    </p>
+                    <p class="text-dark"
+                        *ngIf="formRegistroAdoptante.get('telefono').hasError('required') && formRegistroAdoptante.get('telefono').touched">
+                        Introduzca un teléfono.
                     </p>
                 </div>
                 <div class="form-group col-md-6">
@@ -64,15 +71,19 @@
                     <input type="email" class="form-control" name="email" formControlName="email">
                     <p class="text-dark"
                         *ngIf="formRegistroAdoptante.get('email').hasError('required') && formRegistroAdoptante.get('email').touched">
-                        Por favor, introduzca un email válido.
+                        Por favor, introduzca un email.
+                    </p>
+                    <p class="text-dark"
+                        *ngIf="formRegistroAdoptante.get('email').hasError('pattern') && formRegistroAdoptante.get('email').touched">
+                        El email debe tener un formato correcto.
                     </p>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label>¿Tiene gato en casa?</label>
-                    <select class="form-control" formControlName="tiene_gato" minlength="1">
-                        <option selected>Elige una opción</option>
+                    <select class="form-control" formControlName="tiene_gato">
+                        <option value="" selected>Elige una opción</option>
                         <option value="si">SI</option>
                         <option value="no">NO</option>
                     </select>
@@ -84,7 +95,7 @@
                 <div class="form-group col-md-6">
                     <label>Tipo de vivienda</label>
                     <select class="form-control" formControlName="tipo_vivienda">
-                        <option selected>Elige una opción</option>
+                        <option value="" selected>Elige una opción</option>
                         <option value="piso">Piso</option>
                         <option value="casa_chalet">Casa/Chalet</option>
                     </select>
@@ -94,25 +105,29 @@
                     </p>
                 </div>
             </div>
-            <div class="form-group">
 
+            <div class="form-group">
                 <label>¿Dispones de espacio exterior?</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                        value="option1" formControlName="espacio_exterior">
-                    <label class="form-check-label" for="exampleRadios1">
-                        SI
-                    </label>
+                    <div>
+                        <input class="form-check-input" type="radio" formControlName="espacio_exterior" value="si">
+                        <label class="form-check-label">
+                            SI
+                        </label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" type="radio" formControlName="espacio_exterior" value="no"
+                            checked>
+                        <label class="form-check-label">
+                            NO
+                        </label>
+                    </div>
+                    <p class="text-dark" *ngIf="formRegistroAdoptante.get('espacio').hasError('required')">
+                        Este campo es requerido. POR QUÉ ESTO NO SALE
+                    </p>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
-                        value="option2" formControlName="espacio_exterior">
-                    <label class="form-check-label" for="exampleRadios2">
-                        NO
-                    </label>
-                </div>
-
             </div>
+
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>Metros cuadrados del espacio exterior</label>
@@ -122,10 +137,11 @@
                 <div class="form-group col-md-6">
                     <label>Tipo de espacio exterior</label>
                     <select class="form-control" formControlName="tipo_espacio_exterior">
-                        <option selected>Elige una opción</option>
+                        <option value="" selected>Elige una opción</option>
                         <option value="patio">Patio</option>
                         <option value="jardin">Jardin</option>
                     </select>
+
 
                 </div>
                 <div class="form-group col-md-8">
@@ -138,7 +154,7 @@
                 </div>
 
             </div>
-            <button type="submit" class="btn btn-dark">Enviar</button>
+            <button type="submit" class="btn btn-dark" [disabled]="!formRegistroAdoptante.valid">Enviar</button>
         </form>
     </div>
 </div>

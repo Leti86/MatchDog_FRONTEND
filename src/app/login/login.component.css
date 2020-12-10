@@ -10,3 +10,9 @@
 h2{
     margin-bottom: 30px;
 }
+button:hover{
+	cursor:pointer;
+}
+form p{
+    font-size: small;
+}

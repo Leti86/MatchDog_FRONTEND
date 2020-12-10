@@ -11,7 +11,10 @@ export class LoginComponent implements OnInit {
 
   formRegistroAdoptante: FormGroup;
 
+
   constructor(private adoptantesService: AdoptantesService) {
+
+
     this.formRegistroAdoptante = new FormGroup({
       nombre: new FormControl('',
         Validators.required),
@@ -36,8 +39,8 @@ export class LoginComponent implements OnInit {
         Validators.required),
       espacio_exterior: new FormControl('',
         Validators.required),
-      medida_espacio_exterior: new FormControl(''), //no requerido
-      tipo_espacio_exterior: new FormControl(''), //no requerido
+      medida_espacio_exterior: new FormControl(''), //dato no obligatorio
+      tipo_espacio_exterior: new FormControl(''), //dato no obligatorio
       fotos_casa: new FormControl('',
         Validators.required),
 
@@ -45,6 +48,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   onSubmit() {
