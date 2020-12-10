@@ -1,25 +1,17 @@
-/* :root{
-    --fuente_titulos: 'Neucha', cursive;
-    --fuente_textos: 'Hind Madurai', sans-serif;
-    --color_marron: rgb(124, 47, 3);
-    --color_gris: lightgray;
-    --size_titulo: 3rem;
-    --size_texto: 1.2rem;
-    --line_height: 2rem;
-} */
 
 h2{
     text-align: center;
     font-size: var(--size_titulo);
     font-family: var(--fuente_titulos);
     color: var(--color_marron);
-    /* background-color: yellow; */
     padding: 2%;
 }
 
 
+
+/*Estilos de las noticias*/
+
 .noticias{  
-    /* background-color: violet; */
     padding: 1.5% 1.5% 1.5% 1%; 
 }
 
@@ -33,13 +25,23 @@ h2{
 .noticias .noticia h4:hover{
     text-decoration: underline;
 }
+
+.noticias .noticia .imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
 .noticias .noticia img{
     cursor: pointer;
     width: 100%;
     height: auto;
     
 }
-
+.card-body p{
+    margin:0;
+}
 
 .noticias .anterior, .siguiente{
     padding: 0 5%;
@@ -50,88 +52,140 @@ h2{
 
 }
 
+/* Estilos de busquedas: botón */
 .busquedas{
-    
-    /* background-color: green; */ 
     padding: 1.5% 0;  
     height: auto;
     
 }
-
-.busquedas h5{
-    font-weight: 700;
-    text-align: center;
-    color: var(--color_marron);
-    
-
-}
-
 .buscador{
-    margin: 5% 0 15% 0;   
+    padding: 0px 10px 50px 10px;
+    text-align: center;
     
 }
 
 .buscador h5{
-    text-align: center;
+    color: var(--color_marron);
+    font-size: 2rem;
+    font-family: var(--fuente_titulos);
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
-.post_recientes{
-    /* background-color: blue; */
+
+
+.busquedas .buscador .input-group button{
+    border-radius: 0%;
+    font-family: var(--fuente_textos);
+    font-weight: 600;
+    margin-right: 10px;
+}
+.busquedas .buscador .input-group input{
+    border-radius: 0%;
+}
+
+
+
+
+
+
+/* Estilos del menú entradas recientes  */
+.entradas_recientes{
+    text-align: center;
     width: 100%;
     height: auto;
     padding: 2% 0;
-    
-    }
+}
 
-.busquedas .post_recientes ul li{
+.entradas_recientes h5{
     font-family: var(--fuente_titulos);
+    color: var(--color_marron);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.entradas_recientes ul li{
+    font-family: var(--fuente_titulos);
+    font-size: var(--size_texto);
     text-align: center;
     cursor: pointer;
+    border:none;
+    border-bottom: 1px solid lightgray;
 }
 
-.busquedas .post_recientes ul li:hover{
+.entradas_recientes ul li:hover{
     font-weight: 700;
 }
 
 
+
+
+
+
+
+/* Estilos del menú categorías  */
 .categorias{
-    font-weight: 600;
     text-align: center;    
-    
     width: 100%;
-    height: auto;
+    height: 420px;
     margin: 15% 0;
     padding: 2% 0;
-    border: 4px solid rgb(124, 47, 3);
+    
 }
+
 .categorias h5{
-    color: black;
-    font-weight: 700;
+    color:var(--color_marron);
+    font-weight: 600;
+    font-size: 2rem;
+    font-family: var(--fuente_titulos);
+    margin-bottom: 10px;
+    
 }
 
 .categorias ul li{
-    font-family: var(--fuente_textos);
-    color: black;
+    font-family: var(--fuente_titulos);
+    font-size: var(--size_texto);
+    border:none;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 20px;
+    
 }
 
+
 .categorias ul li:hover{
-    font-size: 1.2rem;
+    font-weight: 700;
     cursor: pointer;
 }
 
+/* Estilos de rrss  */
 .rrss{
+    color: var(--color_marron);
     font-weight: 600;
     text-align: center;
-    color: var(--color_marron);
-    /* background-color: orange; */
+    
     width: 100%;
     height: auto;
-    padding: 2% 0;
+    margin:10px 0;
+}
+
+.rrss h5{
+    font-family: var(--fuente_titulos);
+    color:inherit;
+    font-size: 2rem;
+    margin-bottom: 5%;
 }
 
 .rrss a{
     margin: 0 10px; 
     
 }
+.rrss a i{
+    font-size: 1.5rem;
+}
+
+
+
+
+
 
 
