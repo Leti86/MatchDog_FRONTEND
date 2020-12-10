@@ -37,38 +37,27 @@
                     <a href="" *ngFor="let post of arrPostRecientes">
                         <li class="list-group-item">{{post.titulo}}</li>
                     </a>
-                    <!-- <a>
-                        <li class="list-group-item">Golpe de CALOR en el perro </li>
-                    </a>
-                    <a>
-                        <li class="list-group-item">La importancia de la LLAMADA</li>
-                    </a>
-                    <a>
-                        <li class="list-group-item">¿Tu perro se restriega sobre la hierba?</li>
-                    </a>
-                    <a>
-                        <li class="list-group-item">SEGURIDAD en la calle</li>
-                    </a> -->
 
                 </ul>
             </div>
             <div class="container-fluid categorias">
-                <h5>CATEGORIAS</h5>
+                <app-categorias></app-categorias>
+                <!-- <h5>CATEGORIAS</h5>
                 <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center"
                         (click)="onClickAllCategories()">
 
                         Todas las categorias
-                        <span class="badge badge-warning badge-pill">14</span>
+                        <span class="badge badge-warning badge-pill">???</span>
                     </li>
 
                     <li class="list-group-item d-flex justify-content-between align-items-center"
                         *ngFor="let categoria of arrCategorias" (click)="onClick(categoria)">
                         {{categoria}}
-                        <span class="badge badge-warning badge-pill">14</span>
+                        <span class="badge badge-warning badge-pill">???</span>
                     </li>
 
-                </ul>
+                </ul> -->
             </div>
             <div class="container-fluid rrss">
                 <h5>Síguenos en RRSS</h5>
