@@ -29,6 +29,9 @@ export class CategoriasComponent implements OnInit {
   ngOnInit(): void {
     //aqui tengo que hacer una un bucle que recorra el array de categorias y me vaya devolviendo el numero de post de dicha categoria
 
+    /* for(let categorias of this.arrCategorias){
+      this.totalPostAseo = 
+    } */
 
 
 
