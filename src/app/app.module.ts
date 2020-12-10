@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { LoginProtectoraComponent } from './login-protectora/login-protectora.component';
 import { MapComponent } from './map/map.component';
 import { AgmCoreModule } from '@agm/core';
+import { CategoriasComponent } from './categorias/categorias.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AgmCoreModule } from '@agm/core';
     AnimalesComponent,
     LoginComponent,
     LoginProtectoraComponent,
-    MapComponent
+    MapComponent,
+    CategoriasComponent
   ],
   imports: [
     BrowserModule,

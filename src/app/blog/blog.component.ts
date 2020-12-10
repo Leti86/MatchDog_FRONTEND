@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BlogService, Post } from '../servicios/blog.service';
 
 @Component({
@@ -9,60 +10,76 @@ import { BlogService, Post } from '../servicios/blog.service';
 export class BlogComponent implements OnInit {
 
   posts: Post[];
-  arrCategorias: string[];
   arrPostRecientes: Post[];
 
 
+  constructor(
+    private blogService: BlogService,
+    private activatedRoute: ActivatedRoute) {
 
-
-  constructor(private blogService: BlogService) {
-    this.arrCategorias = ["aseo", "comportamiento", "cuidado", "seguridad"]
   }
-
-
 
   ngOnInit(): void {
     // Recuperamos todos los Post
-    this.blogService.getAllPosts()
-      .then(response => {
-        {
-          this.posts = response;
-          console.log(response);
+    //segun la ruta que recibimos cargamos un post u otra categoria. ActivatedRoute me devuelve el parmetro variable de la ruta
+    this.activatedRoute.params.subscribe(params => {
+      console.log(params.categoria);
 
-        }
-      })
-      .catch(error => console.log(error));
+      if (params.categoria !== undefined) {
+        this.blogService.getByCategory(params.categoria)
+          .then(response => {
+            {
+              this.posts = response;
 
+            }
+          })
+          .catch(error => console.log(error));
+      } else {
+        this.blogService.getAllPosts()
+          .then(response => {
+            {
+              this.posts = response;
 
+            }
+          })
+          .catch(error => console.log(error));
+      }
+    })
+
+    // Recuperamos titulos post recientes
     this.blogService.getPostByDate()
       .then(response => {
         this.arrPostRecientes = response
-        console.log(response);
-
       })
       .catch(error => console.log(error));
 
 
-  }
-
-  onClick(pCategoria) {
-    this.blogService.getByCategory(pCategoria)
+    /* this.blogService.countTotalPost()
       .then(response => {
-        this.posts = response
-      })
-      .catch(error => { console.log(error) });
-  }
+        this.numPostTotales = response[0];
+        console.log(this.numPostTotales);
+      }
 
-  onClickAllCategories() {
-    this.blogService.getAllPosts()
-      .then(response => {
-        this.posts = response
-      })
+
+      )
       .catch(error => console.log(error));
 
+
+
+    this.blogService.countPost(pCategoria)
+      .then(response => {
+        this.numPost = response
+
+      })
+      .catch(error => console.log(error));
+ */
+
   }
-
-
 
 
 }
+
+
+
+
+

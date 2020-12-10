@@ -9,6 +9,7 @@ import { ProtectorasComponent } from './protectoras/protectoras.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'blog', component: BlogComponent },
+  { path: 'blog/:categoria', component: BlogComponent },
   { path: 'home', component: HomeComponent },
   { path: 'animales', component: AnimalesComponent },
   { path: 'protectoras', component: ProtectorasComponent },

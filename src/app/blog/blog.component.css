@@ -124,7 +124,7 @@ h2{
 
 
 /* Estilos del menú categorías  */
-.categorias{
+/* .categorias{
     text-align: center;    
     width: 100%;
     height: 420px;
@@ -155,7 +155,7 @@ h2{
 .categorias ul li:hover{
     font-weight: 700;
     cursor: pointer;
-}
+} */
 
 /* Estilos de rrss  */
 .rrss{
