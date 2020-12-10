@@ -1,14 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../servicios/blog.service';
+import { BlogService, Post } from '../servicios/blog.service';
 
-export interface Post {
-  imagen: string,
-  titulo: string,
-  texto: string,
-  fecha: string,
-  categoria: string
-
-}
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -16,70 +8,61 @@ export interface Post {
 })
 export class BlogComponent implements OnInit {
 
-  arrPost: Post[];
+  posts: Post[];
   arrCategorias: string[];
-  totalPostAseo: number;
-  totalPostCuidado: number;
-  totalPostSeguridad: number;
-  totalPostComportamiento: number;
+  arrPostRecientes: Post[];
+
+
 
 
   constructor(private blogService: BlogService) {
-
-    this.arrPost = [];
-    this.arrCategorias = [];
-    this.totalPostAseo = 0;
-    this.totalPostCuidado = 0;
-    this.totalPostSeguridad = 0;
-    this.totalPostComportamiento = 0;
+    this.arrCategorias = ["aseo", "comportamiento", "cuidado", "seguridad"]
   }
+
+
 
   ngOnInit(): void {
+    // Recuperamos todos los Post
+    this.blogService.getAllPosts()
+      .then(response => {
+        {
+          this.posts = response;
+          console.log(response);
 
-    this.blogService.getAllPost()
-      .then(posts => this.arrPost = posts)
+        }
+      })
       .catch(error => console.log(error));
 
-    this.blogService.getAllCategories()
-      .then(categories => this.arrCategorias = categories)
+
+    this.blogService.getPostByDate()
+      .then(response => {
+        this.arrPostRecientes = response
+        console.log(response);
+
+      })
       .catch(error => console.log(error));
 
-    this.countPost(this.arrPost);
 
   }
 
-  async onClick(pCategoria) {
-    this.arrPost = await this.blogService.getPostsByCategoria(pCategoria);
+  onClick(pCategoria) {
+    this.blogService.getByCategory(pCategoria)
+      .then(response => {
+        this.posts = response
+      })
+      .catch(error => { console.log(error) });
   }
 
-  async onClickAll() {
-    this.arrPost = await this.blogService.getAllPost();
+  onClickAllCategories() {
+    this.blogService.getAllPosts()
+      .then(response => {
+        this.posts = response
+      })
+      .catch(error => console.log(error));
+
   }
 
-  // Funcion para saber el total de POST por categorias
-  countPost(pArrPost) {
-    for (let post of pArrPost) {
-      let categoriaPost = post.categoria;
-      switch (categoriaPost) {
-        case 'aseo':
-          this.totalPostAseo++;
-          break;
-        case 'cuidado':
-          this.totalPostCuidado++;
-          break;
-        case 'seguridad':
-          this.totalPostSeguridad++;
-          break;
-        case 'comportamiento':
-          this.totalPostComportamiento++;
-          break;
 
-        default:
-          console.log('No se ha logrado contar las categorias')
-          break;
 
-      }
 
-    }
-  }
 }

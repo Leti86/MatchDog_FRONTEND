@@ -2,7 +2,7 @@
     <h2>NUESTRO BLOG</h2>
     <div class="row">
         <section class="col-md-9 col-12 d-md-block noticias">
-            <article class="noticia" *ngFor="let post of arrPost">
+            <article class="noticia" *ngFor="let post of posts">
                 <div class="card mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-4 imagen">
@@ -19,87 +19,7 @@
                     </div>
                 </div>
             </article>
-            <!-- <article class="noticia">
-                <div class="card mb-3">
-                    <div class="row no-gutters">
-                        <div class="col-md-4 imagen">
-                            <img src="https://www.mundoperros.es/wp-content/uploads/2016/05/perro_comiendo-830x588.jpg"
-                                class="card-img">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h4 class="card-title">Golpe de CALOR en el perro</h4>
-                                <p class="card-text">El golpe de calor en un perro, también llamado hipertermia, es la
-                                    consecuencia de la subida de su temperatura corporal hasta tal punto que puede
-                                    causarle daños y problemas fisiológicos</p>
-                                <p class="card-text"><small class="text-muted">Fecha publicacion</small></p>
-                                <p class="card-text"><small class="text-muted">Categoria</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="noticia">
-                <div class="card mb-3">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="https://www.trecebits.com/wp-content/uploads/2018/11/Perro.jpg" class="card-img">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h4 class="card-title">SEGURIDAD en la calle</h4>
-                                <p class="card-text">La seguridad de tu perro en la calle comienza por NO SOLTARLE NUNCA
-                                    hasta no haber conseguido el vínculo necesario para que atienda a tu llamada SIN
-                                    DUDAR</p>
-                                <p class="card-text"><small class="text-muted">fecha publicacion</small></p>
-                                <p class="card-text"><small class="text-muted">Categoria</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="noticia">
-                <div class="card mb-3">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTocqN8nuvf7rv5TgkgxCznvKna1uXSGYPSjA&usqp=CAU"
-                                class="card-img">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h4 class="card-title">¿Tu perro se restriega sobre la hierba?</h4>
-                                <p class="card-text">uando tu perro se restriega sobre la hierba puede ser por
-                                    diferentes razones. En la entrada de hoy vamos a analizarlas para que entiendas los
-                                    motivos. Estamos hablando sobre la …</p>
-                                <p class="card-text"><small class="text-muted">Fecha publicacion</small></p>
-                                <p class="card-text"><small class="text-muted">Categoria</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="noticia">
-                <div class="card mb-3">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="https://www.mundoperros.es/wp-content/uploads/2016/05/perro_comiendo-830x588.jpg"
-                                class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h4 class="card-title">Cuando tu animal SE PIERDE</h4>
-                                <p class="card-text">Cuando tu animal se pierde es importante reaccionar lo antes
-                                    posible, ya que las primeras 24 horas son fundamentales para tener mas éxito en
-                                    encontrarle. En este artículo os indicamos las actuación a seguir; a quien comunicar
-                                    la pérdida y como hacerlo, y también como afrontar la búsqueda y los pasos a seguir.
-                                </p>
-                                <p class="card-text"><small class="text-muted">Fecha publicacion</small></p>
-                                <p class="card-text"><small class="text-muted">Categoria</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article> -->
+
             <button type="button" class="btn btn-secondary btn-sm anterior"><i
                     class="fas fa-angle-double-left"></i></button>
             <button type="button" class="btn btn-secondary btn-sm float-right siguiente"><i
@@ -117,10 +37,10 @@
             <div class="container-fluid post_recientes">
                 <h5>ENTRADAS RECIENTES</h5>
                 <ul class="list-group list-group-flush">
-                    <a href="">
-                        <li class="list-group-item">Cuando tu animal SE PIERDE</li>
+                    <a href="" *ngFor="let post of arrPostRecientes">
+                        <li class="list-group-item">{{post.titulo}}</li>
                     </a>
-                    <a>
+                    <!-- <a>
                         <li class="list-group-item">Golpe de CALOR en el perro </li>
                     </a>
                     <a>
@@ -131,7 +51,7 @@
                     </a>
                     <a>
                         <li class="list-group-item">SEGURIDAD en la calle</li>
-                    </a>
+                    </a> -->
 
                 </ul>
             </div>
@@ -139,7 +59,8 @@
                 <h5>CATEGORIAS</h5>
                 <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center"
-                        (click)="onClickAll()">
+                        (click)="onClickAllCategories()">
+
                         Todas las categorias
                         <span class="badge badge-warning badge-pill">14</span>
                     </li>
