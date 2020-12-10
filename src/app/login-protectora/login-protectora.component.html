@@ -6,7 +6,7 @@
                 <input type="text" class="form-control" formControlName="nombre">
                 <p class="text-dark"
                     *ngIf="formRegistroProtectoras.get('nombre').hasError('required') && formRegistroProtectoras.get('nombre').touched">
-                    Por favor, indiquenos su nombre
+                    Por favor, indiquenos su nombre.
                 </p>
             </div>
         </div>
@@ -16,7 +16,11 @@
                 <input type="email" class="form-control" id="inputEmail3" formControlName="email">
                 <p class="text-dark"
                     *ngIf="formRegistroProtectoras.get('email').hasError('pattern') && formRegistroProtectoras.get('email').touched">
-                    El email debe tener un formato correcto
+                    El email debe tener un formato correcto.
+                </p>
+                <p class="text-dark"
+                    *ngIf="formRegistroProtectoras.get('email').hasError('required') && formRegistroProtectoras.get('email').touched">
+                    Debe introducir un email.
                 </p>
             </div>
         </div>
@@ -28,8 +32,12 @@
                     *ngIf="formRegistroProtectoras.get('telefono').hasError('minlength') && formRegistroProtectoras.get('telefono').touched">
                     El telefono debe de contener
                     {{formRegistroProtectoras.get('telefono').errors.minlength.requiredLength}}
-                    caract. Has escrito {{formRegistroProtectoras.get('telefono').errors.minlength.actualLength}}
+                    caracteres. Has escrito {{formRegistroProtectoras.get('telefono').errors.minlength.actualLength}}
                     caracteres
+                </p>
+                <p class="text-dark"
+                    *ngIf="formRegistroProtectoras.get('telefono').hasError('required') && formRegistroProtectoras.get('telefono').touched">
+                    Introduzca un teléfono.
                 </p>
             </div>
         </div>
@@ -39,7 +47,7 @@
                 <input type="text" class="form-control" formControlName="direccion">
                 <p class="text-dark"
                     *ngIf="formRegistroProtectoras.get('direccion').hasError('required') && formRegistroProtectoras.get('direccion').touched">
-                    Por favor, indiquenos su nombre direccion
+                    Por favor, indiquenos su dirección.
                 </p>
             </div>
         </div>
@@ -49,7 +57,7 @@
                 <input type="text" class="form-control" formControlName="localidad">
                 <p class="text-dark"
                     *ngIf="formRegistroProtectoras.get('localidad').hasError('required') && formRegistroProtectoras.get('localidad').touched">
-                    Por favor, indiquenos su localidad
+                    Por favor, indíquenos su localidad.
                 </p>
             </div>
 
@@ -62,7 +70,7 @@
                 </select>
                 <p class="text-dark"
                     *ngIf="formRegistroProtectoras.get('provincia').hasError('required') && formRegistroProtectoras.get('provincia').touched">
-                    Por favor, indiquenos su provincia
+                    Por favor, indíquenos su provincia
                 </p>
             </div>
         </div>
@@ -131,7 +139,7 @@
         </div>
         <div class="form-group">
 
-            <button type="submit" class="btn btn-dark">Enviar</button>
+            <button type="submit" class="btn btn-dark" [disabled]="!formRegistroProtectoras.valid">Enviar</button>
 
         </div>
     </form>

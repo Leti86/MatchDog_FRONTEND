@@ -20,6 +20,7 @@ export class LoginProtectoraComponent implements OnInit {
       ),
       email: new FormControl(
         '', [
+        Validators.required,
         Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
       ]),
       telefono: new FormControl(
