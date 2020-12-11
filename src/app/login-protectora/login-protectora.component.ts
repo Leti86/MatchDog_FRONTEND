@@ -26,7 +26,8 @@ export class LoginProtectoraComponent implements OnInit {
       telefono: new FormControl(
         '', [
         Validators.required,
-        Validators.minLength(9)
+        Validators.min(0),
+        this.numberValidator
       ]
       ),
       direccion: new FormControl(
@@ -72,6 +73,17 @@ export class LoginProtectoraComponent implements OnInit {
       })
       .catch(error => console.log(error));
 
+  }
+
+
+  numberValidator(control: FormControl) {
+    const valor = control.value;
+    // console.log(valor)
+    if (valor === null) {
+      return { numberValidator: 'el campo debe ser numérico' }
+    } else {
+      return null;
+    }
   }
 
 }

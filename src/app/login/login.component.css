@@ -31,3 +31,7 @@ select.ng-valid.ng-touched {
 select.ng-invalid.ng-touched {
     border: 1px solid red;
 }
+
+input[type=number]{
+    -moz-appearance: textfield;
+}

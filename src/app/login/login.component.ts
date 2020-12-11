@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
         Validators.required),
       telefono: new FormControl('', [
         Validators.required,
+        Validators.min(0),
+        Validators.minLength(9),
         this.numberValidator]),
       email: new FormControl('', [
         Validators.required,

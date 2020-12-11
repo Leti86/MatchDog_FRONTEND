@@ -27,7 +27,7 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Telefono</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" formControlName="telefono">
+                <input type="number" class="form-control" formControlName="telefono">
                 <p class="text-dark"
                     *ngIf="formRegistroProtectoras.get('telefono').hasError('minlength') && formRegistroProtectoras.get('telefono').touched">
                     El telefono debe de contener
@@ -139,8 +139,10 @@
         </div>
         <div class="form-group">
 
-            <button type="submit" class="btn btn-dark" disabled>Enviar</button>
+            <input type="submit" value="Enviar" class="btn btn-block btn-dark"
+                [disabled]="!formRegistroProtectoras.valid">
 
         </div>
     </form>
+    <p>Formulario Valid: {{ formRegistroProtectoras.valid }}</p>
 </div>
