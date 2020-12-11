@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
         Validators.required),
       telefono: new FormControl('', [
         Validators.required,
-        Validators.minLength(9)]),
+        this.numberValidator]),
       email: new FormControl('', [
         Validators.required,
         Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
@@ -39,8 +39,9 @@ export class LoginComponent implements OnInit {
         Validators.required),
       espacio_exterior: new FormControl('',
         Validators.required),
-      medida_espacio_exterior: new FormControl('',
-        [Validators.min(0), this.numberValidator]), //dato no obligatorio
+      medida_espacio_exterior: new FormControl('', [
+        Validators.min(0),
+        this.numberValidator]), //dato no obligatorio
       tipo_espacio_exterior: new FormControl(''), //dato no obligatorio
       fotos_casa: new FormControl('',
         Validators.required),
@@ -54,26 +55,28 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     console.log(this.formRegistroAdoptante.value)
-    // this.adoptantesService.create(this.formRegistroAdoptante.value)
-    //   .then(response => {
-    //     console.log(response);
+    this.adoptantesService.create(this.formRegistroAdoptante.value)
+      .then(response => {
+        console.log(response);
+        this.formRegistroAdoptante.value.reset;
+      })
+      .catch(error => console.log(error));
 
-    //   })
-    //   .catch(error => console.log(error));
-
-    //resetear los valores, por qué no lo hace?
-    this.formRegistroAdoptante.value.reset;
   }
 
 
-  //Validadores personalizados: hacer un validador que sirva para el teléfono y los metros cuadrados, que solo admita números, no letras ni tampoco mezcla de núms y letras NO FUNCIONA, POR QUE?
+  //Validador personalizado: comprueba si se ha introducido un número (una letra la reconoce como null)
   numberValidator(control: FormControl) {
-    const metrosCuadrados = control.value;
-    if (!isNaN(metrosCuadrados)) {
+    const valor = control.value;
+    // console.log(valor)
+    if (valor === null) {
+      return { numberValidator: 'el campo debe ser numérico' }
+    } else {
       return null;
     }
-
   }
+
+
 
 
 }
