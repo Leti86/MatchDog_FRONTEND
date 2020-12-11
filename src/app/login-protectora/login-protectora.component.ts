@@ -56,7 +56,7 @@ export class LoginProtectoraComponent implements OnInit {
         Validators.required,
         Validators.minLength(20)
       ]),
-      password: new FormControl(
+      password_protectora: new FormControl(
         '', [
         Validators.required,
         Validators.pattern(/^(?=.*\d).{4,8}$/)
@@ -70,7 +70,7 @@ export class LoginProtectoraComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(this.formRegistroProtectoras.value) COMPROBADO MANDA BIEN LOS DATOS INCLUIDO PASSWORD
+    console.log(this.formRegistroProtectoras.value)
     this.protectoraService.create(this.formRegistroProtectoras.value)
       .then(response => {
         console.log(response);
