@@ -47,7 +47,9 @@ export class LoginComponent implements OnInit {
       tipo_espacio_exterior: new FormControl(''), //dato no obligatorio
       fotos_casa: new FormControl('',
         Validators.required),
-
+      password: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^(?=.*\d).{4,8}$/)])
     })
   }
 
@@ -56,7 +58,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.formRegistroAdoptante.value)
+    // console.log(this.formRegistroAdoptante.value) MANDA BIEN LOS DATOS DE ADOPTANTE, INCLUIDO LA PASSWORD
     this.adoptantesService.create(this.formRegistroAdoptante.value)
       .then(response => {
         console.log(response);

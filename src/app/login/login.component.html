@@ -167,6 +167,18 @@
                 </div>
 
             </div>
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" class="form-control" name="password" formControlName="password">
+                <p class="text-dark"
+                    *ngIf="formRegistroAdoptante.get('password').hasError('required') && formRegistroAdoptante.get('password').touched">
+                    Por favor, cree una contraseña sólida.
+                </p>
+                <p class="text-dark"
+                    *ngIf="formRegistroAdoptante.get('password').hasError('pattern') && formRegistroAdoptante.get('password').touched">
+                    Por favor, cree una contraseña sólida.
+                </p>
+            </div>
 
 
 
@@ -175,6 +187,6 @@
                 [disabled]="!formRegistroAdoptante.valid">
         </form>
 
-        <p>Formulario Valid: {{ formRegistroAdoptante.valid }}</p>
+
     </div>
 </div>

@@ -137,12 +137,23 @@
                 Por favor, haznos un breve resumen
             </p>
         </div>
+
         <div class="form-group">
-
-            <input type="submit" value="Enviar" class="btn btn-block btn-dark"
-                [disabled]="!formRegistroProtectoras.valid">
-
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" formControlName="password">
+            <p class="text-dark"
+                *ngIf="formRegistroProtectoras.get('password').hasError('required') && formRegistroProtectoras.get('password').touched">
+                Introduzca su password.
+            </p>
+            <p class="text-dark"
+                *ngIf="formRegistroProtectoras.get('password').hasError('pattern') && formRegistroProtectoras.get('password').touched">
+                La password debe contener como mínimo 8 caracteres, mayúsculas, símbolos y números.
+            </p>
         </div>
+
+        <input type="submit" value="Enviar" class="btn btn-block btn-dark" [disabled]="!formRegistroProtectoras.valid">
+
+
     </form>
-    <p>Formulario Valid: {{ formRegistroProtectoras.valid }}</p>
+
 </div>
