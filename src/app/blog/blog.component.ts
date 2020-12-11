@@ -13,9 +13,12 @@ export class BlogComponent implements OnInit {
   arrPostRecientes: Post[];
 
 
+
   constructor(
     private blogService: BlogService,
     private activatedRoute: ActivatedRoute) {
+
+    this.posts = [];
 
   }
 
@@ -23,18 +26,13 @@ export class BlogComponent implements OnInit {
     // Recuperamos todos los Post
     //segun la ruta que recibimos cargamos un post u otra categoria. ActivatedRoute me devuelve el parmetro variable de la ruta
     this.activatedRoute.params.subscribe(params => {
-      console.log(params.categoria);
+      let valor = parseInt(params.categoria);
+      console.log('hola', valor);
+      console.log('adios', params.categoria);
 
-      if (params.categoria !== undefined) {
-        this.blogService.getByCategory(params.categoria)
-          .then(response => {
-            {
-              this.posts = response;
 
-            }
-          })
-          .catch(error => console.log(error));
-      } else {
+      if (params.categoria === undefined) {
+
         this.blogService.getAllPosts()
           .then(response => {
             {
@@ -43,7 +41,31 @@ export class BlogComponent implements OnInit {
             }
           })
           .catch(error => console.log(error));
+
+
+
       }
+      else if (isNaN(valor)) {
+        this.blogService.getByCategory(params.categoria)
+          .then(response => {
+            {
+              this.posts = response;
+
+            }
+          })
+          .catch(error => console.log(error));
+
+      } else {
+        this.blogService.getPostTitle(valor)
+          .then(response => {
+            this.posts = response;
+            console.log(this.posts);
+
+          })
+          .catch(error => console.log(error))
+
+      }
+
     })
 
     // Recuperamos titulos post recientes
@@ -54,27 +76,10 @@ export class BlogComponent implements OnInit {
       .catch(error => console.log(error));
 
 
-    /* this.blogService.countTotalPost()
-      .then(response => {
-        this.numPostTotales = response[0];
-        console.log(this.numPostTotales);
-      }
 
-
-      )
-      .catch(error => console.log(error));
-
-
-
-    this.blogService.countPost(pCategoria)
-      .then(response => {
-        this.numPost = response
-
-      })
-      .catch(error => console.log(error));
- */
 
   }
+
 
 
 }

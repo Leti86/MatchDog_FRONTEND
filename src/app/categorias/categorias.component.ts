@@ -11,31 +11,43 @@ import { BlogService, Post } from '../servicios/blog.service';
 export class CategoriasComponent implements OnInit {
 
   arrPost: Post[];
-  arrCategorias: string[];
-  totalPostAseo: number;
-  totalPostComportamiento: number;
-  totalPostCuidado: number;
-  totalPostSeguridad: number;
+  arrCategorias: any[];
+  totalPost: Number;
 
 
 
-  constructor(
-    private blogService: BlogService,
+
+
+
+  constructor(private blogService: BlogService,
     private router: Router) {
-    this.arrCategorias = ["aseo", "comportamiento", "cuidado", "seguridad"];
+    this.arrCategorias = [{ titulo: "aseo" }, { titulo: "comportamiento" }, { titulo: "cuidado" }, { titulo: "seguridad" }];
     this.arrPost = []
+    this.totalPost = 0;
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     //aqui tengo que hacer una un bucle que recorra el array de categorias y me vaya devolviendo el numero de post de dicha categoria
+    let i = 0;
+    for (let categoria of this.arrCategorias) {
+      /* const totalPost = await this.blogService.countPost(categoria) */
+      const object = await this.blogService.countPost(categoria.titulo);
+      console.log(object);
 
-    /* for(let categorias of this.arrCategorias){
-      this.totalPostAseo = 
-    } */
+      this.arrCategorias[i].numPost = object.numPost;
+      this.totalPost += object.numPost
 
+      i++;
+    }
+    console.log(this.totalPost);
 
+    console.log(this.arrCategorias);
 
   }
+
+
+
+
 
   onClick(pCategoria) {
     this.router.navigate(['/blog', pCategoria])

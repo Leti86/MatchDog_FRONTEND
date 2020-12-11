@@ -41,8 +41,12 @@ export class BlogService {
     return this.httpClient.get<any>(`${this.baseUrl}/count/${pCategoria}`).toPromise();
   }
 
-  countTotalPost(): Promise<any> {
+  /* countTotalPost(): Promise<any> {
     return this.httpClient.get<any>(`${this.baseUrl}/count/total`).toPromise();
+  } */
+
+  getPostTitle(pId): Promise<Post[]> {
+    return this.httpClient.get<Post[]>(`${this.baseUrl}/titulo/${pId}`).toPromise();
   }
 
 
