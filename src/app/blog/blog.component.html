@@ -34,7 +34,7 @@
             <div class="container-fluid entradas_recientes">
                 <h5>ENTRADAS RECIENTES</h5>
                 <ul class="list-group list-group-flush">
-                    <a href="" *ngFor="let post of arrPostRecientes">
+                    <a *ngFor="let post of arrPostRecientes" [routerLink]="['/blog', post.id]">
                         <li class="list-group-item">{{post.titulo}}</li>
                     </a>
 
@@ -42,22 +42,7 @@
             </div>
             <div class="container-fluid categorias">
                 <app-categorias></app-categorias>
-                <!-- <h5>CATEGORIAS</h5>
-                <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center"
-                        (click)="onClickAllCategories()">
 
-                        Todas las categorias
-                        <span class="badge badge-warning badge-pill">???</span>
-                    </li>
-
-                    <li class="list-group-item d-flex justify-content-between align-items-center"
-                        *ngFor="let categoria of arrCategorias" (click)="onClick(categoria)">
-                        {{categoria}}
-                        <span class="badge badge-warning badge-pill">???</span>
-                    </li>
-
-                </ul> -->
             </div>
             <div class="container-fluid rrss">
                 <h5>Síguenos en RRSS</h5>
