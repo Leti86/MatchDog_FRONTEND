@@ -1,7 +1,13 @@
 <div class="mapa">
-    <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="17">
-        <agm-marker [latitude]="latitud" [longitude]="longitud" [markerDraggable]="true">
-            <!-- markerDraggable: cambio de sitio mi marcador(posicion) -->
+    <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="9.6">
+        <agm-marker *ngFor="let coordenada of listadoCoords" [latitude]="coordenada.latitud"
+            [longitude]="coordenada.longitud" [markerDraggable]="true">
+
+            <agm-info-window>
+                <p>{{coordenada.nombre}}</p>
+                <p>{{coordenada.localidad}}</p>
+            </agm-info-window>
+
         </agm-marker>
 
     </agm-map>

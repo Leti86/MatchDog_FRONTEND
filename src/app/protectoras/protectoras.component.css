@@ -100,7 +100,16 @@ span{
 .detalle_protectoras{
     overflow:hidden;
     padding-left: 7px;
+    max-width: 290px; 
+    height: 170px
         
+}
+
+.marron_zoom{
+    border: 2px solid var(--color_marron);
+    transform:scale(1.2); 
+    cursor:pointer;
+    font-size: 1.2rem;
 }
 
 .detalle_protectoras h5{

@@ -78,10 +78,21 @@ export class BlogComponent implements OnInit {
 
   // Recuperamos Post por palabra introducida en buscador
   searchWord($event) {
-    console.log($event.target.value);
-    this.blogService.getPostByWord($event.target.value)
-      .then(response => this.posts = response)
-      .catch(error => console.log(error));
+    //console.log($event.target.value);
+    if ($event.target.value === "") {
+      this.blogService.getAllPosts()
+        .then(response => {
+          {
+            this.posts = response;
+
+          }
+        })
+        .catch(error => console.log(error));
+    } else {
+      this.blogService.getPostByWord(($event.target.value).toLowerCase())
+        .then(response => this.posts = response)
+        .catch(error => console.log(error));
+    }
 
   }
 

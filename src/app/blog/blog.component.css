@@ -72,14 +72,6 @@ h2{
     font-weight: 600;
 }
 
-
-
-.busquedas .buscador .input-group button{
-    border-radius: 0%;
-    font-family: var(--fuente_textos);
-    font-weight: 600;
-    margin-right: 10px;
-}
 .busquedas .buscador .input-group input{
     border-radius: 0%;
 }

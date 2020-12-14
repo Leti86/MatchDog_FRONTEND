@@ -22,8 +22,8 @@
 
     <div class="col-md-3 col-12 d-md-block d-none lista_protectoras">
 
-        <div class="card mb-3 detalle_protectoras" style="max-width: 290px; height: 170px"
-            *ngFor="let protectora of protectoras | slice:0:3">
+        <div class="card mb-3 detalle_protectoras " *ngFor="let protectora of protectoras | slice:0:3"
+            [ngClass]="{'marron_zoom': true}">
             <div class="row no-gutters">
                 <div class="logo_protectora col-md-4">
                     <img src={{protectora.imagen}} class="card-img">
@@ -43,8 +43,8 @@
         <app-map></app-map>
     </div>
     <div class="col-md-3 col-12 d-md-block d-none lista_protectoras">
-        <div class="card mb-3 detalle_protectoras" style="max-width: 290px; height: 170px"
-            *ngFor="let protectora of protectoras | slice:3:6">
+        <div class="card mb-3 detalle_protectoras" *ngFor="let protectora of protectoras | slice:3:6"
+            [ngClass]="{'marron_zoom': true}">
             <div class="row no-gutters">
                 <div class="logo_protectora col-md-4">
                     <img src={{protectora.imagen}} class="card-img">

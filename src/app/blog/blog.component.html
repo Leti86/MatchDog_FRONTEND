@@ -12,8 +12,10 @@
                             <div class="card-body">
                                 <h4 class="card-title">{{post.titulo}}</h4>
                                 <p class="card-text">{{post.texto}}</p>
-                                <p class="card-text"><small class="text-muted">{{post.fecha}}</small></p>
-                                <p class="card-text"><small class="text-muted">{{post.categoria}}</small></p>
+                                <p class="card-text"><small class="text-muted">{{post.fecha |date:"dd-MM-yyyy"}}</small>
+                                </p>
+                                <p class="card-text"><small class="text-muted">{{post.categoria | titlecase}}</small>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -26,7 +28,7 @@
             <div class="buscador">
                 <h5>BUSCADOR</h5>
                 <div class="input-group">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Buscar</button>
+
                     <input type="text" class="form-control" placeholder="Introduce una palabra ..."
                         (keypress)="searchWord($event)">
 
