@@ -74,12 +74,16 @@ export class BlogComponent implements OnInit {
         this.arrPostRecientes = response
       })
       .catch(error => console.log(error));
-
-
-
-
   }
 
+  // Recuperamos Post por palabra introducida en buscador
+  searchWord($event) {
+    console.log($event.target.value);
+    this.blogService.getPostByWord($event.target.value)
+      .then(response => this.posts = response)
+      .catch(error => console.log(error));
+
+  }
 
 
 }
