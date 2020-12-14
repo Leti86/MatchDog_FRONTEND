@@ -140,13 +140,14 @@
 
         <div class="form-group">
             <label>Password</label>
-            <input type="password" class="form-control" name="password" formControlName="password">
+            <input type="password" class="form-control" name="password_protectora"
+                formControlName="password_protectora">
             <p class="text-dark"
-                *ngIf="formRegistroProtectoras.get('password').hasError('required') && formRegistroProtectoras.get('password').touched">
+                *ngIf="formRegistroProtectoras.get('password_protectora').hasError('required') && formRegistroProtectoras.get('password_protectora').touched">
                 Introduzca su password.
             </p>
             <p class="text-dark"
-                *ngIf="formRegistroProtectoras.get('password').hasError('pattern') && formRegistroProtectoras.get('password').touched">
+                *ngIf="formRegistroProtectoras.get('password_protectora').hasError('pattern') && formRegistroProtectoras.get('password_protectora').touched">
                 La password debe contener como mínimo 8 caracteres, mayúsculas, símbolos y números.
             </p>
         </div>

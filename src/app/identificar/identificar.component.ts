@@ -26,6 +26,7 @@ export class IdentificarComponent implements OnInit {
 
   onSubmit() {
     console.log(this.formLogin.value);
+    //devolver promesa con token
   }
 
 }
