@@ -1,7 +1,7 @@
 <div class="mapa">
     <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="9.6">
         <agm-marker *ngFor="let coordenada of listadoCoords" [latitude]="coordenada.latitud"
-            [longitude]="coordenada.longitud" [markerDraggable]="true">
+            [longitude]="coordenada.longitud" [markerDraggable]="true" (mapDblClick)="onDbClick($event)">
 
             <agm-info-window>
                 <p>{{coordenada.nombre}}</p>

@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Protectora, ProtectoraService } from '../servicios/protectora.service';
 
 @Component({
@@ -14,6 +14,10 @@ export class MapComponent implements OnInit {
   longitud: number;
   listadoCoords: any[];
 
+  protectoraClicada: Protectora;
+
+  @Output() protectoraSeleccionada: EventEmitter<Protectora>;
+
 
 
   constructor(private protectoraService: ProtectoraService) {
@@ -22,6 +26,9 @@ export class MapComponent implements OnInit {
     this.latitud = 40.437698;
     this.longitud = -3.675525;
     this.listadoCoords = [];
+
+    this.protectoraSeleccionada = new EventEmitter();
+
 
   }
 
@@ -32,6 +39,13 @@ export class MapComponent implements OnInit {
         this.listadoCoords = response
       })
       .catch(error => console.log(error));
+
+  }
+
+  onDbClick($event) {
+    console.log('Hola Leti');
+    //this.protectoraSeleccionada.emit(this.protectoraClicada);
+
 
   }
 
