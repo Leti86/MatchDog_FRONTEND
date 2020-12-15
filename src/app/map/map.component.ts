@@ -13,8 +13,10 @@ export class MapComponent implements OnInit {
   latitud: number;
   longitud: number;
   listadoCoords: any[];
+  infoActual: any;
 
-  protectoraClicada: Protectora;
+
+
 
   @Output() protectoraSeleccionada: EventEmitter<Protectora>;
 
@@ -27,6 +29,7 @@ export class MapComponent implements OnInit {
     this.longitud = -3.675525;
     this.listadoCoords = [];
 
+
     this.protectoraSeleccionada = new EventEmitter();
 
 
@@ -36,18 +39,27 @@ export class MapComponent implements OnInit {
 
     this.protectoraService.getCoord()
       .then(response => {
-        this.listadoCoords = response
+        this.listadoCoords = response;
+        //console.log(this.listadoCoords);
       })
       .catch(error => console.log(error));
 
-  }
-
-  onDbClick(pId) {
-    console.log(pId);
-    //this.protectoraSeleccionada.emit(this.protectoraClicada);
 
 
   }
+
+  onDbClick(pId, pInfo) {
+    //console.log(pId);
+    if (this.infoActual) {
+      this.infoActual.close()
+    } this.infoActual = pInfo;
+
+    this.protectoraSeleccionada.emit(pId);
+    //console.log(pId + 'IdProtectora');  
+
+  }
+
+
 
 
 
