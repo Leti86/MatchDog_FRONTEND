@@ -4,9 +4,9 @@
 
         <agm-marker *ngFor="let coordenada of listadoCoords" [latitude]="coordenada.latitud"
             [longitude]="coordenada.longitud" [markerDraggable]="true" [markerClickable]="true"
-            (markerClick)="onDbClick($event)">
+            (markerClick)="onDbClick(coordenada.id, info)">
 
-            <agm-info-window>
+            <agm-info-window #info>
                 <p>{{coordenada.nombre}}</p>
                 <p>{{coordenada.localidad}}</p>
             </agm-info-window>

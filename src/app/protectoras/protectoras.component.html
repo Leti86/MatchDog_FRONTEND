@@ -23,7 +23,7 @@
     <div class="col-md-3 col-12 d-md-block d-none lista_protectoras">
 
         <div class="card mb-3 detalle_protectoras " *ngFor="let protectora of protectoras | slice:0:3"
-            [ngClass]="{'marron_zoom': true}">
+            [ngClass]="(protectora.id == coordenadaMarker)?'marron_zoom': 'detalle_protectoras'">
             <div class="row no-gutters">
                 <div class="logo_protectora col-md-4">
                     <img src={{protectora.imagen}} class="card-img">
@@ -40,11 +40,12 @@
 
     </div>
     <div class="col-md-6 col-12">
-        <app-map></app-map>
+        <app-map (protectoraSeleccionada)="ReciboCoordenada($event)"></app-map>
     </div>
     <div class="col-md-3 col-12 d-md-block d-none lista_protectoras">
         <div class="card mb-3 detalle_protectoras" *ngFor="let protectora of protectoras | slice:3:6"
-            [ngClass]="{'marron_zoom': true}">
+            [ngClass]="(protectora.id == coordenadaMarker)?'marron_zoom': 'detalle_protectoras'">
+
             <div class="row no-gutters">
                 <div class="logo_protectora col-md-4">
                     <img src={{protectora.imagen}} class="card-img">
