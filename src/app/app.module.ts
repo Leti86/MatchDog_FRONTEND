@@ -16,6 +16,8 @@ import { MapComponent } from './map/map.component';
 import { AgmCoreModule } from '@agm/core';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { IdentificarComponent } from './identificar/identificar.component';
+import { VistaAdoptanteComponent } from './vista-adoptante/vista-adoptante.component';
+import { VistaProtectoraComponent } from './vista-protectora/vista-protectora.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { IdentificarComponent } from './identificar/identificar.component';
     LoginProtectoraComponent,
     MapComponent,
     CategoriasComponent,
-    IdentificarComponent
+    IdentificarComponent,
+    VistaAdoptanteComponent,
+    VistaProtectoraComponent
   ],
   imports: [
     BrowserModule,

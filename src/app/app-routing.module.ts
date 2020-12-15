@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { IdentificarComponent } from './identificar/identificar.component';
 import { LoginComponent } from './login/login.component';
 import { ProtectorasComponent } from './protectoras/protectoras.component';
+import { VistaAdoptanteComponent } from './vista-adoptante/vista-adoptante.component';
+import { VistaProtectoraComponent } from './vista-protectora/vista-protectora.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'protectoras', component: ProtectorasComponent },
   { path: 'login', component: LoginComponent },
   { path: 'identificar', component: IdentificarComponent },
+  { path: 'vistaadoptante', component: VistaAdoptanteComponent },
+  { path: 'vistaprotectora', component: VistaProtectoraComponent },
   { path: '**', redirectTo: '/home' }
 ];
 

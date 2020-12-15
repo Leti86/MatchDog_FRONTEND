@@ -42,8 +42,8 @@ export class MapComponent implements OnInit {
 
   }
 
-  onDbClick($event) {
-    console.log('Hola Leti');
+  onDbClick(pId) {
+    console.log(pId);
     //this.protectoraSeleccionada.emit(this.protectoraClicada);
 
 
