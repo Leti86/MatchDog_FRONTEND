@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdoptantesService } from '../servicios/adoptantes.service';
-// import { IdentificacionService } from '../servicios/identificacion.service';
 
 @Component({
   selector: 'identificar',
@@ -15,7 +14,7 @@ export class IdentificarComponent implements OnInit {
 
   mensajeError: string;
   formLogin: FormGroup;
-  // identificacionService: IdentificacionService
+
 
   constructor(private adoptantesService: AdoptantesService, private router: Router) {
 

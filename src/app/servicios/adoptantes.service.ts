@@ -33,28 +33,11 @@ export class AdoptantesService {
   create(formsValues): Promise<Adoptante> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': 'Cabecera desde Angular'
+        "Content-Type": "application/json"
       })
     }
 
-    const body = {
-      nombre: formsValues.nombre,
-      apellidos: formsValues.apellidos,
-      direccion: formsValues.direccion,
-      email: formsValues.email,
-      telefono: formsValues.telefono,
-      localidad: formsValues.localidad,
-      provincia: formsValues.provincia,
-      tiene_gato: formsValues.tiene_gato,
-      espacio_exterior: formsValues.espacio_exterior,
-      metros_exterior: formsValues.metros_exterior,
-      tipo_vivienda: formsValues.tipo_vivienda,
-      tipo_espacio_exterior: formsValues.tipo_espacio_exterior,
-      fotos_casa: formsValues.fotos_casa,
-      password: formsValues.password
-
-    }
-    return this.httpClient.post<Adoptante>(`${this.baseUrl}/crear`, formsValues).toPromise();
+    return this.httpClient.post<Adoptante>(`${this.baseUrl}/crear`, formsValues, httpOptions).toPromise();
   }
 
   login(formValues): Promise<any> {
@@ -64,7 +47,7 @@ export class AdoptantesService {
         "Content-Type": "application/json"
       })
     }
-    return this.httpClient.post<any>(`${this.baseUrl}/login`, formValues).toPromise();
+    return this.httpClient.post<any>(`${this.baseUrl}/login`, formValues, httpOptions).toPromise();
   }
 
   isLogged(): boolean {
