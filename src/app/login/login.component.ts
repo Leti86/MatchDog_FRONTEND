@@ -62,9 +62,10 @@ export class LoginComponent implements OnInit {
     this.adoptantesService.create(this.formRegistroAdoptante.value)
       .then(response => {
         console.log(response);
-        this.formRegistroAdoptante.value.reset;
+
       })
       .catch(error => console.log(error));
+    this.formRegistroAdoptante.reset();
 
   }
 

@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Perro } from './perros.service';
+
 
 
 export interface Adoptante {
@@ -62,6 +64,28 @@ export class AdoptantesService {
     }
     return this.httpClient.get<Adoptante>(`${this.baseUrl}/perfil`, httpOptions).toPromise();
   }
+
+  getFavouriteDogs(): Promise<Perro[]> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Authorization": localStorage.getItem("token_adoptantes")
+      })
+    }
+    return this.httpClient.get<Perro[]>(`${this.baseUrl}/perrosfavoritos`, httpOptions).toPromise();
+  }
+
+  eliminarPerroListaFavoritos(pIdFavoritos): Promise<Perro> {
+    return this.httpClient.get<Perro>(`${this.baseUrl}/perrosfavoritos/borrar/${pIdFavoritos}`).toPromise();
+  }
+
+
+
+
+
+
+
+
 
 
 }

@@ -50,8 +50,10 @@ export class FormLoginComponent implements OnInit {
         }
 
 
+
       })
       .catch(error => console.log(error));
+
 
 
   }

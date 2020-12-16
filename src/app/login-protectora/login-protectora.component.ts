@@ -77,6 +77,7 @@ export class LoginProtectoraComponent implements OnInit {
 
       })
       .catch(error => console.log(error));
+    this.formRegistroProtectoras.reset();
 
 
   }

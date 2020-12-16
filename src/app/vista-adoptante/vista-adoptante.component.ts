@@ -1,7 +1,8 @@
-import { ThrowStmt } from '@angular/compiler';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Adoptante, AdoptantesService } from '../servicios/adoptantes.service';
+import { Perro } from '../servicios/perros.service';
 
 @Component({
   selector: 'app-vista-adoptante',
@@ -11,8 +12,15 @@ import { Adoptante, AdoptantesService } from '../servicios/adoptantes.service';
 export class VistaAdoptanteComponent implements OnInit {
   // formEdicionAdoptante: FormGroup;
   datosAdoptante: Adoptante;
+  datosPerros: Perro[];
 
-  constructor(private adoptantesService: AdoptantesService) {
+
+  constructor(
+    private adoptantesService: AdoptantesService
+  ) {
+
+    this.datosPerros = [];
+
 
 
 
@@ -61,7 +69,28 @@ export class VistaAdoptanteComponent implements OnInit {
         this.datosAdoptante = response)
       .catch(error => console.log(error));
 
-    // console.log(this.datosAdoptante);
+    //console.log(this.datosAdoptante);
+
+    this.adoptantesService.getFavouriteDogs()
+      .then(response =>
+        this.datosPerros = response)
+      .catch(error => console.log(error));
+  }
+
+  onclick(perro) {
+    const IdEliminar = perro.idFavorito;
+    //console.log(IdEliminar);
+    this.adoptantesService.eliminarPerroListaFavoritos(IdEliminar)
+      .then(response =>
+        console.log(response)
+      )
+      .catch(error => console.log(error));
+
+    this.adoptantesService.getFavouriteDogs()
+      .then(response =>
+        this.datosPerros = response)
+      .catch(error => console.log(error));
+
 
   }
 
