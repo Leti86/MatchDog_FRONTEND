@@ -18,6 +18,7 @@ import { CategoriasComponent } from './categorias/categorias.component';
 import { IdentificarComponent } from './identificar/identificar.component';
 import { VistaAdoptanteComponent } from './vista-adoptante/vista-adoptante.component';
 import { VistaProtectoraComponent } from './vista-protectora/vista-protectora.component';
+import { FormLoginComponent } from './form-login/form-login.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { VistaProtectoraComponent } from './vista-protectora/vista-protectora.co
     CategoriasComponent,
     IdentificarComponent,
     VistaAdoptanteComponent,
-    VistaProtectoraComponent
+    VistaProtectoraComponent,
+    FormLoginComponent
   ],
   imports: [
     BrowserModule,

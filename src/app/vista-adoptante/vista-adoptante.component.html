@@ -3,6 +3,29 @@
         <div class="contenedor col-md-6 col-12">
             <div class="container">
                 <h3>Bienvenido blabla</h3>
+                <div class="datos">
+                    <p>Nombre y apellidos: {{datosAdoptante.nombre}} {{datosAdoptante.apellidos}}</p>
+                    <p>Dirección: {{datosAdoptante.direccion}}</p>
+                    <p>Email: {{datosAdoptante.email}}</p>
+                    <p>Teléfono: {{datosAdoptante.telefono}}</p>
+                    <p>Localidad: {{datosAdoptante.localidad}}</p>
+                    <p>Provincia: {{datosAdoptante.provincia}}</p>
+                    <p>Tienes gato: {{datosAdoptante.tiene_gato}}</p>
+                    <p>Tienes espacio exterior: {{datosAdoptante.espacio_exterior}}</p>
+                    <p>Cuántos metros tiene:
+                        {{datosAdoptante.metros_exterior}}</p>
+                    <p>Tipo de vivienda: {{datosAdoptante.tipo_vivienda}}</p>
+                    <p>Tipo de espacio exterior:
+                        {{datosAdoptante.tipo_espacio_exterior}}</p>
+                    <div class="imagen-vivienda">
+                        <img src={{datosAdoptante.fotos_casa}}>
+                    </div>
+
+                </div>
+
+
+
+
                 <!-- <form [formGroup]="formEdicionAdoptante" (ngSubmit)="onSubmit()">
                     <div class="form-row">
                         <div class="form-group col-md-6">

@@ -1,5 +1,7 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Adoptante, AdoptantesService } from '../servicios/adoptantes.service';
 
 @Component({
   selector: 'app-vista-adoptante',
@@ -8,8 +10,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class VistaAdoptanteComponent implements OnInit {
   // formEdicionAdoptante: FormGroup;
+  datosAdoptante: Adoptante;
 
-  constructor() {
+  constructor(private adoptantesService: AdoptantesService) {
+
+
+
     // this.formEdicionAdoptante = new FormGroup({
     //   nombre: new FormControl('',
     //     Validators.required),
@@ -49,6 +55,14 @@ export class VistaAdoptanteComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.adoptantesService.perfil()
+      .then(response =>
+        this.datosAdoptante = response)
+      .catch(error => console.log(error));
+
+    // console.log(this.datosAdoptante);
+
   }
 
 }

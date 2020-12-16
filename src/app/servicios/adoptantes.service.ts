@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
-export interface Adoptante { //interfaz de adoptante creada, revisar si los tipos de datos son correctos
+export interface Adoptante {
   nombre: string,
   apellidos: string,
   direccion: string,
@@ -12,9 +12,12 @@ export interface Adoptante { //interfaz de adoptante creada, revisar si los tipo
   email: string,
   tiene_gato: string,
   espacio_exterior: string,
-  medida_espacio_exterior?: number,
+  metros_exterior?: number,
+  tipo_vivienda: string,
   tipo_espacio_exterior?: string,
-  fotos_casa: string
+  fotos_casa: string,
+  password: string,
+  rol: string
 }
 
 
@@ -50,12 +53,15 @@ export class AdoptantesService {
     return this.httpClient.post<any>(`${this.baseUrl}/login`, formValues, httpOptions).toPromise();
   }
 
-  isLogged(): boolean {
-    if (localStorage.getItem('token_adoptantes')) {
-      return true;
-    } else {
-      return false;
+  perfil(): Promise<Adoptante> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Authorization": localStorage.getItem("token_adoptantes")
+      })
     }
+    return this.httpClient.get<Adoptante>(`${this.baseUrl}/perfil`, httpOptions).toPromise();
   }
+
 
 }
