@@ -16,8 +16,10 @@ export class FormLoginComponent implements OnInit {
 
   constructor(private adoptantesService: AdoptantesService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.formLogin = new FormGroup({
-      email: new FormControl('',
-        Validators.required),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
+      ]),
       password: new FormControl('',
         [Validators.required,
         Validators.pattern(/^(?=.*\d).{4,8}$/)]

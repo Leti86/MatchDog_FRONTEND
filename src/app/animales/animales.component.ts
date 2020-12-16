@@ -69,6 +69,9 @@ export class AnimalesComponent implements OnInit {
 
   //este array de perros es el que tendrá cada adoptante. puede añadir perros a la lista personal.
   onClickAddFavourite(pPerro) {
+
+
+
     this.perrosFavoritos.push(pPerro);
     console.log(this.perrosFavoritos);
     // swal('Perro añadido a la lista', '¡Sigue explorando!', "success"); DA ERROR AL HACER EL NG SERVE, MIRAR POR QUÉ
