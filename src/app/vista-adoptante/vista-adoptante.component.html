@@ -2,24 +2,25 @@
     <div class="row">
         <div class="contenedor col-md-6 col-12">
             <div class="container">
-                <h3>Bienvenido blabla</h3>
+                <h2>Bienvenido {{datosAdoptante.nombre}}</h2>
                 <div class="datos">
-                    <p>Nombre y apellidos: {{datosAdoptante.nombre}} {{datosAdoptante.apellidos}}</p>
-                    <p>Dirección: {{datosAdoptante.direccion}}</p>
-                    <p>Email: {{datosAdoptante.email}}</p>
-                    <p>Teléfono: {{datosAdoptante.telefono}}</p>
-                    <p>Localidad: {{datosAdoptante.localidad}}</p>
-                    <p>Provincia: {{datosAdoptante.provincia}}</p>
-                    <p>Tienes gato: {{datosAdoptante.tiene_gato}}</p>
-                    <p>Tienes espacio exterior: {{datosAdoptante.espacio_exterior}}</p>
-                    <p>Cuántos metros tiene:
+                    <p><span>Nombre y apellidos:</span> {{datosAdoptante.nombre}} {{datosAdoptante.apellidos}}</p>
+                    <p><span>Dirección:</span> {{datosAdoptante.direccion}}</p>
+                    <p><span>Email:</span> {{datosAdoptante.email}}</p>
+                    <p><span>Teléfono:</span> {{datosAdoptante.telefono}}</p>
+                    <p><span>Localidad:</span> {{datosAdoptante.localidad}}</p>
+                    <p><span>Provincia:</span> {{datosAdoptante.provincia}}</p>
+                    <p><span>Tienes gato:</span> {{datosAdoptante.tiene_gato}}</p>
+                    <p><span>Tienes espacio exterior:</span> {{datosAdoptante.espacio_exterior}}</p>
+                    <p><span>Cuántos metros tiene:</span>
                         {{datosAdoptante.metros_exterior}}</p>
-                    <p>Tipo de vivienda: {{datosAdoptante.tipo_vivienda}}</p>
-                    <p>Tipo de espacio exterior:
+                    <p><span>Tipo de vivienda:</span> {{datosAdoptante.tipo_vivienda}}</p>
+                    <p><span>Tipo de espacio exterior:</span>
                         {{datosAdoptante.tipo_espacio_exterior}}</p>
                     <div class="imagen-vivienda">
                         <img src={{datosAdoptante.fotos_casa}}>
                     </div>
+                    <button class="btn btn-block btn-dark">Editar mis datos</button>
 
                 </div>
 
@@ -211,7 +212,7 @@
             </div>
         </div>
         <div class="contenedor col-md-6 col-12">
-            <h3>Tus perros favoritos</h3>
+            <h2>Tus perros favoritos</h2>
 
             <ul class="list-group" *ngFor="let perro of datosPerros">
                 <li class="list-group-item">Nombre: {{perro.nombre_perro}}</li>

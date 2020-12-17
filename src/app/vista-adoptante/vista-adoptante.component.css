@@ -2,6 +2,18 @@
     width: 100%;
     margin:50px 0;
 }
-.contenedor{
-    border:2px solid lightgray;
+
+h2{
+    font-family: var(--fuente_titulos);
+    color:var(--color_marron);
+    margin-bottom: 5%;
+}
+
+
+.contenedor:first-child{
+    border-right:3px solid lightgray;
+}
+
+.datos button{
+    margin-top:5%;
 }
