@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdoptantesService } from '../servicios/adoptantes.service';
+import { ProtectoraService } from '../servicios/protectora.service';
 
 @Component({
   selector: 'app-form-login',
@@ -14,7 +15,12 @@ export class FormLoginComponent implements OnInit {
   formLogin: FormGroup;
   tipo: string;
 
-  constructor(private adoptantesService: AdoptantesService, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(
+    private adoptantesService: AdoptantesService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private protectoraService: ProtectoraService
+  ) {
     this.formLogin = new FormGroup({
       email: new FormControl('', [
         Validators.required,
@@ -38,23 +44,40 @@ export class FormLoginComponent implements OnInit {
     this.mensajeError = null;
     formValues.tipo = this.tipo;
 
-    this.adoptantesService.login(formValues)
-      .then(response => {
+    if (this.tipo === "adoptante") {
+      this.adoptantesService.login(formValues)
+        .then(response => {
 
-        if (response['error']) {
-          this.mensajeError = response['error'];
-        } else {
-          console.log(response['token']);
+          if (response['error']) {
+            this.mensajeError = response['error'];
+          } else {
+            console.log(response['token']);
 
-          localStorage.setItem('token_adoptantes', response['token']);
-          this.router.navigate(['/vistaadoptante']);
+            localStorage.setItem('token_adoptantes', response['token']);
+            this.router.navigate(['/vistaadoptante']);
 
-        }
+          }
 
 
 
-      })
-      .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    } else {
+
+      this.protectoraService.login(formValues)
+        .then(response => {
+          if (response['error']) {
+            this.mensajeError = response['error'];
+          } else {
+            console.log(response['token']);
+
+            localStorage.setItem('token_protectoras', response['token']);
+            this.router.navigate(['/vistaprotectora']);
+
+          }
+        })
+        .catch(error => console.log(error));
+    }
 
 
 

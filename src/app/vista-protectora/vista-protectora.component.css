@@ -1,0 +1,10 @@
+.row{
+    margin:3% 0;
+    background-color: pink;
+}
+.contenedor:first-child{
+    border-right: 3px solid lightgray;
+}
+.contenedor h2{
+    margin-bottom: 5%;
+}

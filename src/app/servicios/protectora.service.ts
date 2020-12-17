@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 export interface Protectora {
@@ -42,6 +42,27 @@ export class ProtectoraService {
   getCoord(): Promise<any[]> {
     return this.httpClient.get<any[]>(`${this.baseUrl}/coordenadas/coordenadas`).toPromise();
   }
+
+  login(formValues): Promise<any> {
+    console.log(formValues);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }
+    return this.httpClient.post<any>(`${this.baseUrl}/login`, formValues, httpOptions).toPromise();
+  }
+
+  perfil(): Promise<Protectora> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Authorization": localStorage.getItem("token_protectoras")
+      })
+    }
+    return this.httpClient.get<Protectora>(`${this.baseUrl}/perfil`, httpOptions).toPromise();
+  }
+
 
 
 }
