@@ -3,17 +3,17 @@
         <div class="contenedor col-md-4 col-12">
             <h2>Tus datos</h2>
 
-            <p><span>Nombre: </span></p>
-            <p><span>Email: </span></p>
-            <p><span>Teléfono: </span></p>
-            <p><span>Dirección: </span></p>
-            <p><span>Localidad: </span></p>
-            <p><span>Provincia: </span></p>
-            <p><span>Latitud: </span></p>
-            <p><span>Longitud: </span></p>
-            <p><span>Necesidad de voluntarios: </span></p>
-            <p><span>Descripción: </span></p>
-            <p><span>Imagen: </span></p>
+            <p><span>Nombre: </span>{{datosProtectora.nombre}}</p>
+            <p><span>Email: </span>{{datosProtectora.email}}</p>
+            <p><span>Teléfono: </span>{{datosProtectora.telefono}}</p>
+            <p><span>Dirección: </span>{{datosProtectora.direccion}}</p>
+            <p><span>Localidad: </span>{{datosProtectora.localidad}}</p>
+            <p><span>Provincia: </span>{{datosProtectora.provincia}}</p>
+            <p><span>Latitud: </span>{{datosProtectora.latitud}}</p>
+            <p><span>Longitud: </span>{{datosProtectora.longitud}}</p>
+            <p><span>Necesidad de voluntarios: </span>{{datosProtectora.necesidad_voluntarios}}</p>
+            <p><span>Descripción: </span>{{datosProtectora.comentarios}}</p>
+            <p><span>Imagen: </span>{{datosProtectora.imagen}}</p>
 
         </div>
         <div class="contenedor col-md-8 col-12">
@@ -31,13 +31,13 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>Ale</td>
-                        <td>5</td>
-                        <td>Juan</td>
-                        <td>555555555</td>
-                        <td>juan@mail.com</td>
-                        <td>Madrid</td>
+                    <tr *ngFor="let dato of datosTabla">
+                        <td>{{dato.nombre_perro}}</td>
+                        <td>{{dato.adoptantes_interesados}}</td>
+                        <td>{{dato.nombre_adoptante}}</td>
+                        <td>{{dato.telefono}}</td>
+                        <td>{{dato.email}}</td>
+                        <td>{{dato.localidad}}</td>
                     </tr>
 
                 </tbody>

@@ -54,13 +54,22 @@ export class ProtectoraService {
   }
 
   perfil(): Promise<Protectora> {
-
     const httpOptions = {
       headers: new HttpHeaders({
         "Authorization": localStorage.getItem("token_protectoras")
       })
     }
     return this.httpClient.get<Protectora>(`${this.baseUrl}/perfil`, httpOptions).toPromise();
+  }
+
+  getTablaData(): Promise<any[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Authorization": localStorage.getItem("token_protectoras")
+      })
+    }
+    return this.httpClient.get<any[]>(`${this.baseUrl}/datatable`, httpOptions).toPromise();
+
   }
 
 
