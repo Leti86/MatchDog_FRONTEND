@@ -52,4 +52,10 @@ export class PerrosService {
     return this.httpClient.get<Perro[]>(`${this.baseUrl}/${pEdad}/${pTamano}`).toPromise();
   }
 
+  favoritesDogs(pIdPerro, pIdAdoptante): Promise<any> {
+    return this.httpClient.get<any>(`${this.baseUrl}/add/favoritos/${pIdPerro}/${pIdAdoptante}`).toPromise();
+  }
+
+
+
 }

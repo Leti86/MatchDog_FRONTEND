@@ -55,6 +55,7 @@ export class AdoptantesService {
     return this.httpClient.post<any>(`${this.baseUrl}/login`, formValues, httpOptions).toPromise();
   }
 
+  // Obtengo datos del Adoptante
   perfil(): Promise<Adoptante> {
 
     const httpOptions = {
@@ -78,6 +79,19 @@ export class AdoptantesService {
   eliminarPerroListaFavoritos(pIdFavoritos): Promise<Perro> {
     return this.httpClient.get<Perro>(`${this.baseUrl}/perrosfavoritos/borrar/${pIdFavoritos}`).toPromise();
   }
+
+  update(formValues): Promise<Adoptante> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Authorization": localStorage.getItem("token_adoptantes")
+      })
+    }
+
+    return this.httpClient.post<Adoptante>(`${this.baseUrl}/update`, formValues, httpOptions).toPromise();
+
+  }
+
+
 
 
 

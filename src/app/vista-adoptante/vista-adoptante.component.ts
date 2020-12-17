@@ -1,6 +1,5 @@
-import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 import { Adoptante, AdoptantesService } from '../servicios/adoptantes.service';
 import { Perro } from '../servicios/perros.service';
 
@@ -10,7 +9,7 @@ import { Perro } from '../servicios/perros.service';
   styleUrls: ['./vista-adoptante.component.css']
 })
 export class VistaAdoptanteComponent implements OnInit {
-  // formEdicionAdoptante: FormGroup;
+
   datosAdoptante: Adoptante;
   datosPerros: Perro[];
 
@@ -21,45 +20,6 @@ export class VistaAdoptanteComponent implements OnInit {
 
     this.datosPerros = [];
 
-
-
-
-    // this.formEdicionAdoptante = new FormGroup({
-    //   nombre: new FormControl('',
-    //     Validators.required),
-    //   apellidos: new FormControl('',
-    //     Validators.required),
-    //   direccion: new FormControl('',
-    //     Validators.required),
-    //   localidad: new FormControl('',
-    //     Validators.required),
-    //   provincia: new FormControl('',
-    //     Validators.required),
-    //   telefono: new FormControl('', [
-    //     Validators.required,
-    //     Validators.min(0),
-    //     Validators.minLength(9),
-    //     this.numberValidator]),
-    //   email: new FormControl('', [
-    //     Validators.required,
-    //     Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
-    //   ]),
-    //   tiene_gato: new FormControl('',
-    //     Validators.required),
-    //   tipo_vivienda: new FormControl('',
-    //     Validators.required),
-    //   espacio_exterior: new FormControl('',
-    //     Validators.required),
-    //   medida_espacio_exterior: new FormControl('', [
-    //     Validators.min(0),
-    //     this.numberValidator]), //dato no obligatorio
-    //   tipo_espacio_exterior: new FormControl(''), //dato no obligatorio
-    //   fotos_casa: new FormControl('',
-    //     Validators.required),
-    //   password: new FormControl('', [
-    //     Validators.required,
-    //     Validators.pattern(/^(?=.*\d).{4,8}$/)])
-    // })
   }
 
   ngOnInit(): void {

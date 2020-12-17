@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AnimalesComponent } from './animales/animales.component';
 import { BlogComponent } from './blog/blog.component';
 import { FormLoginComponent } from './form-login/form-login.component';
+import { FormularioEditComponent } from './formulario-edit/formulario-edit.component';
 import { HomeComponent } from './home/home.component';
 import { IdentificarComponent } from './identificar/identificar.component';
 import { LoginComponent } from './login/login.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'identificar', component: IdentificarComponent },
   { path: 'identificar/:tipo', component: FormLoginComponent },
   { path: 'vistaadoptante', component: VistaAdoptanteComponent },
+  { path: 'vistaadoptante/editarAdoptante', component: FormularioEditComponent },
   { path: 'vistaprotectora', component: VistaProtectoraComponent },
   { path: '**', redirectTo: '/home' }
 ];

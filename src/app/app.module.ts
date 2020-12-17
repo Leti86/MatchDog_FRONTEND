@@ -19,6 +19,7 @@ import { IdentificarComponent } from './identificar/identificar.component';
 import { VistaAdoptanteComponent } from './vista-adoptante/vista-adoptante.component';
 import { VistaProtectoraComponent } from './vista-protectora/vista-protectora.component';
 import { FormLoginComponent } from './form-login/form-login.component';
+import { FormularioEditComponent } from './formulario-edit/formulario-edit.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FormLoginComponent } from './form-login/form-login.component';
     IdentificarComponent,
     VistaAdoptanteComponent,
     VistaProtectoraComponent,
-    FormLoginComponent
+    FormLoginComponent,
+    FormularioEditComponent
   ],
   imports: [
     BrowserModule,

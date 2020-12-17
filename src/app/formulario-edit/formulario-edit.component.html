@@ -1,0 +1,180 @@
+<div class="container-fluid">
+    <form [formGroup]="formEdicionAdoptante" (ngSubmit)="onSubmit()" *ngIf="datosAdoptantes">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Nombre</label>
+                <input type="text" class="form-control" name="nombre" formControlName="nombre">
+                <p class="text-dark"
+                    *ngIf="formEdicionAdoptante.get('nombre').hasError('required') && formEdicionAdoptante.get('nombre').touched">
+                    Por favor, indíquenos su nombre.
+                </p>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Apellidos</label>
+                <input type="text" class="form-control" name="apellidos" formControlName="apellidos">
+                <p class="text-dark"
+                    *ngIf="formEdicionAdoptante.get('apellidos').hasError('required') && formEdicionAdoptante.get('apellidos').touched">
+                    Por favor, indíquenos sus apellidos.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+            <label>Dirección</label>
+            <input type="text" class="form-control" name="direccion" formControlName="direccion">
+            <p class="text-dark"
+                *ngIf="formEdicionAdoptante.get('direccion').hasError('required') && formEdicionAdoptante.get('direccion').touched">
+                Debe introducir una dirección.
+            </p>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Localidad</label>
+                <input type="text" class="form-control" name="localidad" formControlName="localidad">
+                <p class="text-dark"
+                    *ngIf="formEdicionAdoptante.get('localidad').hasError('required') && formEdicionAdoptante.get('localidad').touched">
+                    Introduzca su localidad.
+                </p>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Provincia</label>
+                <select class="form-control" formControlName="provincia">
+                    <option value="" selected>Elige una opción</option>
+                    <option value="madrid">Madrid</option>
+                </select>
+                <p class="text-dark"
+                    *ngIf="formEdicionAdoptante.get('provincia').hasError('required') && formEdicionAdoptante.get('provincia').touched">
+                    Por favor, indíquenos su provincia
+                </p>
+
+            </div>
+
+        </div>
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label>Teléfono</label>
+                <input type="number" class="form-control" name="telefono" formControlName="telefono">
+                <p class="text-dark"
+                    *ngIf="formEdicionAdoptante.get('telefono').hasError('required') && formEdicionAdoptante.get('telefono').touched">
+                    Introduzca un teléfono.
+                </p>
+                <p class="text-dark"
+                    *ngIf="formEdicionAdoptante.get('telefono').hasError('numberValidator') && formEdicionAdoptante.get('telefono').touched">
+                    Introduzca solo números.
+                </p>
+
+
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" formControlName="email">
+                <p class="text-dark"
+                    *ngIf="formEdicionAdoptante.get('email').hasError('required') && formEdicionAdoptante.get('email').touched">
+                    Por favor, introduzca un email.
+                </p>
+                <p class="text-dark"
+                    *ngIf="formEdicionAdoptante.get('email').hasError('pattern') && formEdicionAdoptante.get('email').touched">
+                    El email debe tener un formato correcto.
+                </p>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>¿Tiene gato en casa?</label>
+                <select class="form-control" formControlName="tiene_gato">
+                    <option value="" selected>Elige una opción</option>
+                    <option value="si">SI</option>
+                    <option value="no">NO</option>
+                </select>
+                <p class="text-dark"
+                    *ngIf="formEdicionAdoptante.get('tiene_gato').hasError('required') && formEdicionAdoptante.get('tiene_gato').touched">
+                    Este campo es requerido.
+                </p>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Tipo de vivienda</label>
+                <select class="form-control" formControlName="tipo_vivienda">
+                    <option value="" selected>Elige una opción</option>
+                    <option value="piso">Piso</option>
+                    <option value="casa_chalet">Casa/Chalet</option>
+                </select>
+                <p class="text-dark"
+                    *ngIf="formEdicionAdoptante.get('tipo_vivienda').hasError('required') && formEdicionAdoptante.get('tipo_vivienda').touched">
+                    Este campo es requerido.
+                </p>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label>¿Dispones de espacio exterior?</label>
+
+            <select class="form-control" formControlName="espacio_exterior">
+                <option value="" selected>Elige una opción</option>
+                <option value="si">SI</option>
+                <option value="no">NO</option>
+            </select>
+            <p class="text-dark"
+                *ngIf="formEdicionAdoptante.get('espacio_exterior').hasError('required') && formEdicionAdoptante.get('espacio_exterior').touched">
+                Este campo es requerido.
+            </p>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Metros cuadrados del espacio exterior</label>
+                <input type="number" class="form-control" name="metros_exterior" formControlName="metros_exterior">
+            </div>
+            <p class="text-dark" *ngIf="formEdicionAdoptante.get('metros_exterior').hasError('min')">
+                No puede ser un número negativo.
+            </p>
+            <p class="text-dark" *ngIf="formEdicionAdoptante.get('metros_exterior').hasError('numberValidator')">
+                Debe ser un número en cifras.
+            </p>
+
+            <div class="form-group col-md-6">
+                <label>Tipo de espacio exterior</label>
+                <select class="form-control" formControlName="tipo_espacio_exterior">
+                    <option value="" selected>Elige una opción</option>
+                    <option value="patio">Patio</option>
+                    <option value="jardin">Jardin</option>
+                </select>
+
+
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-8">
+                <label>Fotos de la casa</label>
+                <input type="url" class="form-control" name="fotos_casa" formControlName="fotos_casa">
+                <p class="text-dark"
+                    *ngIf="formEdicionAdoptante.get('fotos_casa').hasError('required') && formEdicionAdoptante.get('fotos_casa').touched">
+                    Introduzca una url donde podamos acceder a sus fotos.
+                </p>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" class="form-control" name="password" formControlName="password">
+            <p class="text-dark"
+                *ngIf="formEdicionAdoptante.get('password').hasError('required') && formEdicionAdoptante.get('password').touched">
+                Por favor, cree una contraseña sólida.
+            </p>
+            <p class="text-dark"
+                *ngIf="formEdicionAdoptante.get('password').hasError('pattern') && formEdicionAdoptante.get('password').touched">
+                Por favor, cree una contraseña sólida.
+            </p>
+        </div>
+
+
+
+
+        <input type="submit" value="Enviar" class="btn btn-block btn-dark">
+    </form>
+</div>
