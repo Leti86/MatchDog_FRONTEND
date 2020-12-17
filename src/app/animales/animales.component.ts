@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Adoptante } from '../servicios/adoptantes.service';
 import { Perro, PerrosService } from '../servicios/perros.service';
 // import swal from 'sweetalert';
 
@@ -10,11 +12,17 @@ import { Perro, PerrosService } from '../servicios/perros.service';
 export class AnimalesComponent implements OnInit {
   perrosFavoritos: Perro[];
   perros: Perro[];
+  infoAdoptante: Adoptante;
+
 
   filtroEdad: string;
   filtroTamano: string;
 
-  constructor(private perrosService: PerrosService) {
+  constructor(
+    private perrosService: PerrosService,
+    private router: Router
+
+  ) {
     this.filtroEdad = '';
     this.filtroTamano = '';
     this.perrosFavoritos = [];
@@ -68,13 +76,36 @@ export class AnimalesComponent implements OnInit {
   }
 
   //este array de perros es el que tendrá cada adoptante. puede añadir perros a la lista personal.
-  onClickAddFavourite(pPerro) {
+  onClickAddFavourite(perro) {
+
+    if (localStorage.getItem('token_adoptantes')) {
+      const IdPerro = perro.id;
+
+      this.perrosService.favoritesDogs(IdPerro)
+        .then(response =>
+          console.log(response))
+        .catch(error => console.log(error));
+
+    } else {
+      this.router.navigate(['/identificar']);
+    }
 
 
 
 
-    this.perrosFavoritos.push(pPerro);
-    console.log(this.perrosFavoritos);
+
+
+
+
+
+
+
+
+
+
+
+    // this.perrosFavoritos.push(perro);
+    // console.log(this.perrosFavoritos);
     // swal('Perro añadido a la lista', '¡Sigue explorando!', "success"); DA ERROR AL HACER EL NG SERVE, MIRAR POR QUÉ
 
   }

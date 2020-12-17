@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 export interface Perro {
@@ -52,8 +52,14 @@ export class PerrosService {
     return this.httpClient.get<Perro[]>(`${this.baseUrl}/${pEdad}/${pTamano}`).toPromise();
   }
 
-  favoritesDogs(pIdPerro, pIdAdoptante): Promise<any> {
-    return this.httpClient.get<any>(`${this.baseUrl}/add/favoritos/${pIdPerro}/${pIdAdoptante}`).toPromise();
+  favoritesDogs(pIdPerro): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Authorization": localStorage.getItem("token_adoptantes")
+      })
+    }
+
+    return this.httpClient.get<any>(`${this.baseUrl}/add/favoritos/${pIdPerro}`, httpOptions).toPromise();
   }
 
 

@@ -5,6 +5,7 @@ import { Perro } from './perros.service';
 
 
 export interface Adoptante {
+  id?: number;
   nombre: string,
   apellidos: string,
   direccion: string,
