@@ -39,10 +39,15 @@ p{
     background-size: cover;
     padding-top: 10em;
     border-radius: 0;
+    
 }
 .titulo{
     display: inline-block;
     margin-left: 8%;
+    
+}
+.lead{
+    text-align: left;
 }
 
 .jumbotron .titulo h1{
