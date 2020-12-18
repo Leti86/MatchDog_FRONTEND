@@ -1,39 +1,50 @@
 <div class="container">
     <div class="row">
-        <div class="contenedor col-md-6 col-12">
-            <div class="container" *ngIf="datosAdoptante">
-                <h2>Bienvenido {{datosAdoptante.nombre}}</h2>
-                <div class="datos">
-                    <p><span>Nombre y apellidos:</span> {{datosAdoptante.nombre}} {{datosAdoptante.apellidos}}</p>
-                    <p><span>Dirección:</span> {{datosAdoptante.direccion}}</p>
-                    <p><span>Email:</span> {{datosAdoptante.email}}</p>
-                    <p><span>Teléfono:</span> {{datosAdoptante.telefono}}</p>
-                    <p><span>Localidad:</span> {{datosAdoptante.localidad}}</p>
-                    <p><span>Provincia:</span> {{datosAdoptante.provincia}}</p>
-                    <p><span>Tienes gato:</span> {{datosAdoptante.tiene_gato}}</p>
-                    <p><span>Tienes espacio exterior:</span> {{datosAdoptante.espacio_exterior}}</p>
-                    <p><span>Cuántos metros tiene:</span>
-                        {{datosAdoptante.metros_exterior}}</p>
-                    <p><span>Tipo de vivienda:</span> {{datosAdoptante.tipo_vivienda}}</p>
-                    <p><span>Tipo de espacio exterior:</span>
-                        {{datosAdoptante.tipo_espacio_exterior}}</p>
-                    <div class="imagen-vivienda">
-                        <img src={{datosAdoptante.fotos_casa}}>
+        <div class="contenedor col-md-4 col-12" *ngIf="datosAdoptante">
+            <h2>Bienvenido {{datosAdoptante.nombre}}</h2>
+
+            <p><span>Nombre y apellidos:</span> {{datosAdoptante.nombre}} {{datosAdoptante.apellidos}}</p>
+            <p><span>Dirección:</span> {{datosAdoptante.direccion}}</p>
+            <p><span>Email:</span> {{datosAdoptante.email}}</p>
+            <p><span>Teléfono:</span> {{datosAdoptante.telefono}}</p>
+            <p><span>Localidad:</span> {{datosAdoptante.localidad}}</p>
+            <p><span>Provincia:</span> {{datosAdoptante.provincia}}</p>
+            <p><span>Tienes gato:</span> {{datosAdoptante.tiene_gato}}</p>
+            <p><span>Tienes espacio exterior:</span> {{datosAdoptante.espacio_exterior}}</p>
+            <p><span>Cuántos metros tiene:</span>
+                {{datosAdoptante.metros_exterior}}</p>
+            <p><span>Tipo de vivienda:</span> {{datosAdoptante.tipo_vivienda}}</p>
+            <p><span>Tipo de espacio exterior:</span>
+                {{datosAdoptante.tipo_espacio_exterior}}</p>
+            <div class="imagen-vivienda">
+                <img src={{datosAdoptante.fotos_casa}}>
+            </div>
+            <button class="btn btn-block btn-dark" [routerLink]="['/vistaadoptante/editarAdoptante']">Editar mis
+                datos</button>
+
+        </div>
+        <div class="contenedor col-md-8 col-12">
+            <h2>Tus perros favoritos</h2>
+
+            <div class="contenedor-perro" *ngFor="let perro of datosPerros">
+                <div class="flex">
+                    <div class="datos-perro">
+                        <h5><span>{{perro.nombre_perro}}</span></h5>
+                        <p><span>Edad: </span>{{perro.edad}}</p>
+                        <p><span>Tamaño: </span>{{perro.tamano}}</p>
                     </div>
-                    <button class="btn btn-block btn-dark" [routerLink]="['/vistaadoptante/editarAdoptante']">Editar mis
-                        datos</button>
+                    <div class="foto-perro">
+                        <img src={{perro.imagen}}>
+                    </div>
 
                 </div>
 
-
-
-
+                <button class="btn btn-block btn-dark" (click)="onclick(perro)">Eliminar perro</button>
             </div>
-        </div>
-        <div class="contenedor col-md-6 col-12">
-            <h2>Tus perros favoritos</h2>
 
-            <ul class="list-group" *ngFor="let perro of datosPerros">
+
+
+            <!-- <ul class="list-group" *ngFor="let perro of datosPerros">
                 <li class="list-group-item">Nombre: {{perro.nombre_perro}}</li>
                 <li class="list-group-item">Edad del perro: {{perro.edad}}</li>
                 <li class="list-group-item">Tamaño del perro: {{perro.tamano}}</li>
@@ -42,7 +53,7 @@
                 </div>
                 <button class="btn btn-dark" (click)="onclick(perro)">Eliminar perro</button>
 
-            </ul>
+            </ul> -->
 
 
 

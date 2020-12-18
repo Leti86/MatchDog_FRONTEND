@@ -1,6 +1,7 @@
 .row{
     width: 100%;
-    margin:50px 0;
+    margin: 3% 0 3% 3%;
+    
 }
 
 h2{
@@ -9,11 +10,66 @@ h2{
     margin-bottom: 5%;
 }
 
-
-.contenedor:first-child{
-    border-right:3px solid lightgray;
+h5{
+    font-family: var(--fuente_titulos);
+    color:var(--color_marron);
+    font-size: 2rem;
 }
 
-.datos button{
-    margin-top:5%;
+
+
+.contenedor:first-child{
+    border-right:none;
+    border-bottom: 3px solid lightgray;
+    margin: 10% 0 5% 0;
+}
+
+
+button{
+    margin:1% 0 3% 0;
+    border-radius: 0%;
+}
+
+.contenedor-perro{
+    margin-bottom: 10%;
+    max-width: 90%;
+    
+}
+
+.contenedor-perro .datos-perro{
+    width: 100%;
+    
+}
+
+.contenedor-perro .foto-perro{
+    width: 100%;
+    
+}
+.flex{
+    display:flex;
+    flex-direction: column;
+}
+.flex p{
+    border-bottom: 1px solid lightgray;
+}
+
+
+
+@media(min-width:800px){
+    .contenedor:first-child{
+        border-right:3px solid lightgray;
+        margin: 0;
+    }
+    
+    .contenedor:nth-child(2){
+        padding-left: 3%;
+    }
+    .flex{
+        display:flex;
+        flex-direction: row;
+    }
+    h5{
+        margin-bottom: 15%;
+    }
+
 }
