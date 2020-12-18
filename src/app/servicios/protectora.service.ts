@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Perro } from './perros.service';
 
 export interface Protectora {
   id: number,
@@ -71,6 +72,24 @@ export class ProtectoraService {
     return this.httpClient.get<any[]>(`${this.baseUrl}/datatable`, httpOptions).toPromise();
 
   }
+
+  deleteByFavoriteRelation(pIdfavorito): Promise<any> {
+    return this.httpClient.get<any>(`${this.baseUrl}/BorrarRelacion/${pIdfavorito}`).toPromise();
+  }
+
+  getByDogProtectora(): Promise<Perro[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Authorization": localStorage.getItem("token_protectoras")
+      })
+    }
+    return this.httpClient.get<Perro[]>(`${this.baseUrl}/perrosProtectora`, httpOptions).toPromise();
+
+  }
+
+
+
+
 
 
 

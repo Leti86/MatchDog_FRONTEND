@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Perro } from '../servicios/perros.service';
 import { Protectora, ProtectoraService } from '../servicios/protectora.service';
 
 @Component({
@@ -10,10 +11,13 @@ export class VistaProtectoraComponent implements OnInit {
 
   datosProtectora: Protectora;
   datosTabla: any[];
+  perrosDeProtectoras: Perro[];
 
   constructor(
     private protectoraService: ProtectoraService
-  ) { }
+  ) {
+    this.perrosDeProtectoras = [];
+  }
 
   ngOnInit(): void {
 
@@ -29,6 +33,28 @@ export class VistaProtectoraComponent implements OnInit {
         this.datosTabla = response;
       })
       .catch(error => console.log(error));
+
+    this.protectoraService.getByDogProtectora()
+      .then(response =>
+        this.perrosDeProtectoras = response
+      )
+      .catch(error => console.log(error));
+
+
+  }
+
+  onClick(pIdFavorito) {
+    this.protectoraService.deleteByFavoriteRelation(pIdFavorito)
+      .then(response => console.log(response)
+      )
+      .catch(error => console.log(error));
+
+    this.protectoraService.getTablaData()
+      .then(response => {
+        this.datosTabla = response;
+      })
+      .catch(error => console.log(error));
+
 
   }
 

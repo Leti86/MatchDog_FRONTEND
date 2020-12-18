@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="contenedor col-md-4 col-12">
+        <div class="contenedor col-md-4 col-12" *ngIf="datosProtectora">
             <h2>Tus datos</h2>
 
             <p><span>Nombre: </span>{{datosProtectora.nombre}}</p>
@@ -13,7 +13,26 @@
             <p><span>Longitud: </span>{{datosProtectora.longitud}}</p>
             <p><span>Necesidad de voluntarios: </span>{{datosProtectora.necesidad_voluntarios}}</p>
             <p><span>Descripción: </span>{{datosProtectora.comentarios}}</p>
-            <p><span>Imagen: </span>{{datosProtectora.imagen}}</p>
+            <h3>Todos tus perros</h3>
+            <table class="table table-striped">
+
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Raza</th>
+                        <th>Edad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let perro of perrosDeProtectoras">
+                        <td>{{perro.nombre_perro}}</td>
+                        <td>{{perro.raza}}</td>
+                        <td>{{perro.edad}}</td>
+
+                    </tr>
+                </tbody>
+
+            </table>
 
         </div>
         <div class="contenedor col-md-8 col-12">
@@ -27,6 +46,7 @@
                         <th>Teléfono</th>
                         <th>Mail</th>
                         <th>Localidad</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
 
@@ -38,6 +58,9 @@
                         <td>{{dato.telefono}}</td>
                         <td>{{dato.email}}</td>
                         <td>{{dato.localidad}}</td>
+                        <td>
+                            <a class="btn btn-dark" (click)="onClick(dato.id_tabla_favorito)">Eliminar</a>
+                        </td>
                     </tr>
 
                 </tbody>
