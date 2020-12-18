@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Adoptante } from '../servicios/adoptantes.service';
+import { Adoptante, AdoptantesService } from '../servicios/adoptantes.service';
 import { Perro, PerrosService } from '../servicios/perros.service';
 // import swal from 'sweetalert';
 
@@ -10,28 +10,41 @@ import { Perro, PerrosService } from '../servicios/perros.service';
   styleUrls: ['./animales.component.css']
 })
 export class AnimalesComponent implements OnInit {
-  perrosFavoritos: Perro[];
+  perrosFavoritos: number[];
   perros: Perro[];
   infoAdoptante: Adoptante;
+
+  botonClicado: boolean;
 
 
   filtroEdad: string;
   filtroTamano: string;
 
+
+
   constructor(
     private perrosService: PerrosService,
-    private router: Router
+    private router: Router,
+    private adoptantesService: AdoptantesService
 
   ) {
     this.filtroEdad = '';
     this.filtroTamano = '';
     this.perrosFavoritos = [];
+    this.botonClicado = false;
   }
 
   ngOnInit(): void {
     this.perrosService.getAllDogs()
       .then(response => {
         this.perros = response
+      })
+      .catch(error => console.log(error));
+
+    this.adoptantesService.getFavouriteDogs()
+      .then(response => {
+        this.perrosFavoritos = response.map((perro) => perro.id)
+        console.log(this.perrosFavoritos)
       })
       .catch(error => console.log(error));
   }
@@ -86,27 +99,16 @@ export class AnimalesComponent implements OnInit {
           console.log(response))
         .catch(error => console.log(error));
 
+      this.botonClicado = true;
+
     } else {
       this.router.navigate(['/identificar']);
     }
 
 
+    //petición:traer un array de favoritos. cuando vayamos a pintar los perros, si está dentro de ese array, que el botón cambie de color o quede desactivado. recuperar todos los favoritos del usuario logado para comprobar si está dentro de ese array el perro. conviene desactivar el botón para que no pueda volver a añadir
 
 
-
-
-
-
-
-
-
-
-
-
-
-    // this.perrosFavoritos.push(perro);
-    // console.log(this.perrosFavoritos);
-    // swal('Perro añadido a la lista', '¡Sigue explorando!', "success"); DA ERROR AL HACER EL NG SERVE, MIRAR POR QUÉ
 
   }
 

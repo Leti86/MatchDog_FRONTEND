@@ -11,6 +11,7 @@ export class BlogComponent implements OnInit {
 
   posts: Post[];
   arrPostRecientes: Post[];
+  paginaActual: number;
 
 
 
@@ -19,7 +20,7 @@ export class BlogComponent implements OnInit {
     private activatedRoute: ActivatedRoute) {
 
     this.posts = [];
-
+    this.paginaActual = 1;
   }
 
   ngOnInit(): void {
@@ -27,13 +28,12 @@ export class BlogComponent implements OnInit {
     //segun la ruta que recibimos cargamos un post u otra categoria. ActivatedRoute me devuelve el parmetro variable de la ruta
     this.activatedRoute.params.subscribe(params => {
       let valor = parseInt(params.categoria);
-      console.log('hola', valor);
-      console.log('adios', params.categoria);
+
 
 
       if (params.categoria === undefined) {
 
-        this.blogService.getAllPosts()
+        this.blogService.getByPage(1)
           .then(response => {
             {
               this.posts = response;
@@ -78,7 +78,6 @@ export class BlogComponent implements OnInit {
 
   // Recuperamos Post por palabra introducida en buscador
   searchWord($event) {
-    //console.log($event.target.value);
     if ($event.target.value === "") {
       this.blogService.getAllPosts()
         .then(response => {
@@ -92,6 +91,30 @@ export class BlogComponent implements OnInit {
       this.blogService.getPostByWord(($event.target.value).toLowerCase())
         .then(response => this.posts = response)
         .catch(error => console.log(error));
+    }
+
+  }
+
+  //Botones paginación
+  onClickAnterior() {
+    if (this.paginaActual == 1) {
+      console.log("No existe la página 0");
+    } else {
+      this.blogService.getByPage(--this.paginaActual)
+        .then(response => this.posts = response)
+        .catch(error => console.log(error));
+
+    }
+  }
+
+  onClickSiguiente() {
+    if (this.paginaActual == 3) {
+      console.log("No existe la página 4");
+    } else {
+      this.blogService.getByPage(++this.paginaActual)
+        .then(response => this.posts = response)
+        .catch(error => console.log(error));
+
     }
 
   }

@@ -43,8 +43,8 @@
                 <p>Protectora: {{perro.nombre}}</p>
                 <p>{{perro.localidad}}, {{perro.provincia}}</p>
 
-                <button type="button" id="botonAdd" class="btn btn-outline-dark"
-                    (click)="onClickAddFavourite(perro)">Añadir a
+                <button type="button" id="botonAdd" class="btn btn-outline-dark" (click)="onClickAddFavourite(perro)"
+                    [ngClass]="{'button-red':(perrosFavoritos.includes(perro.id))}">Añadir a
                     favoritos <i class="fas fa-star"></i></button>
             </div>
         </div>

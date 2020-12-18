@@ -93,7 +93,11 @@ button{
     border-radius: 0%;
     border: none;
     font-weight: bold;
-   
+    
+}
+
+.button-red{
+    color:red;
 }
 button:focus {
     outline: none;

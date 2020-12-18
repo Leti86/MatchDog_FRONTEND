@@ -49,6 +49,10 @@ export class BlogService {
     return this.httpClient.get<Post[]>(`${this.baseUrl}/palabra/${pPalabra}`).toPromise();
   }
 
+  getByPage(pNumPagina): Promise<Post[]> {
+    return this.httpClient.get<Post[]>(`${this.baseUrl}/pagina/${pNumPagina}`).toPromise();
+  }
+
 
 
 
