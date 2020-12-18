@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
         Validators.required),
       espacio_exterior: new FormControl('',
         Validators.required),
-      medida_espacio_exterior: new FormControl('', [
+      metros_exterior: new FormControl('', [
         Validators.min(0),
         this.numberValidator]), //dato no obligatorio
       tipo_espacio_exterior: new FormControl(''), //dato no obligatorio

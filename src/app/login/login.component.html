@@ -133,14 +133,13 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>Metros cuadrados del espacio exterior</label>
-                    <input type="number" class="form-control" name="medida_espacio_exterior"
-                        formControlName="medida_espacio_exterior">
+                    <input type="number" class="form-control" name="metros_exterior" formControlName="metros_exterior">
                 </div>
-                <p class="text-dark" *ngIf="formRegistroAdoptante.get('medida_espacio_exterior').hasError('min')">
+                <p class="text-dark" *ngIf="formRegistroAdoptante.get('metros_exterior').hasError('min')">
                     No puede ser un número negativo.
                 </p>
                 <p class="text-dark"
-                    *ngIf="formRegistroAdoptante.get('medida_espacio_exterior').hasError('numberValidator')">
+                    *ngIf="formRegistroAdoptante.get('metros_exterior').hasError('numberValidator') && formRegistroAdoptante.get('metros_exterior').touched">
                     Debe ser un número en cifras.
                 </p>
 
