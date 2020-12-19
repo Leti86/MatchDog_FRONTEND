@@ -107,7 +107,7 @@
                     <select class="form-control" formControlName="tipo_vivienda">
                         <option value="" selected>Elige una opción</option>
                         <option value="piso">Piso</option>
-                        <option value="casa_chalet">Casa/Chalet</option>
+                        <option value="casa/chalet">Casa/Chalet</option>
                     </select>
                     <p class="text-dark"
                         *ngIf="formRegistroAdoptante.get('tipo_vivienda').hasError('required') && formRegistroAdoptante.get('tipo_vivienda').touched">
@@ -134,14 +134,12 @@
                 <div class="form-group col-md-6">
                     <label>Metros cuadrados del espacio exterior</label>
                     <input type="number" class="form-control" name="metros_exterior" formControlName="metros_exterior">
+                    <p class="text-dark" *ngIf="formRegistroAdoptante.get('metros_exterior').hasError('min')">
+                        No puede ser un número negativo.
+                    </p>
+
                 </div>
-                <p class="text-dark" *ngIf="formRegistroAdoptante.get('metros_exterior').hasError('min')">
-                    No puede ser un número negativo.
-                </p>
-                <p class="text-dark"
-                    *ngIf="formRegistroAdoptante.get('metros_exterior').hasError('numberValidator') && formRegistroAdoptante.get('metros_exterior').touched">
-                    Debe ser un número en cifras.
-                </p>
+
 
                 <div class="form-group col-md-6">
                     <label>Tipo de espacio exterior</label>

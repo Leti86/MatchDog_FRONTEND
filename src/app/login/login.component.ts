@@ -41,9 +41,9 @@ export class LoginComponent implements OnInit {
         Validators.required),
       espacio_exterior: new FormControl('',
         Validators.required),
-      metros_exterior: new FormControl('', [
+      metros_exterior: new FormControl('',
         Validators.min(0),
-        this.numberValidator]), //dato no obligatorio
+      ), //dato no obligatorio
       tipo_espacio_exterior: new FormControl(''), //dato no obligatorio
       fotos_casa: new FormControl('',
         Validators.required),
@@ -73,7 +73,7 @@ export class LoginComponent implements OnInit {
   //Validador personalizado: comprueba si se ha introducido un número (una letra la reconoce como null)
   numberValidator(control: FormControl) {
     const valor = control.value;
-    // console.log(valor)
+
     if (valor === null) {
       return { numberValidator: 'el campo debe ser numérico' }
     } else {
