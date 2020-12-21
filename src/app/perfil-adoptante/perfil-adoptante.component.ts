@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Adoptante, AdoptantesService } from '../servicios/adoptantes.service';
 
 @Component({
@@ -9,11 +10,20 @@ import { Adoptante, AdoptantesService } from '../servicios/adoptantes.service';
 export class PerfilAdoptanteComponent implements OnInit {
 
   perfilAdoptante: Adoptante;
+  id: number;
 
-  constructor(private adoptantesService: AdoptantesService) { }
+  constructor(
+    private adoptantesService: AdoptantesService,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.adoptantesService.perfil()
+    this.activatedRoute.params.subscribe(params => {
+      this.id = params.idAdoptante;
+    })
+    //ahora hay que pasarle esta id a nuestra función de recuperación del perfil
+
+
+    this.adoptantesService.perfilDesdeProtectora(this.id)
       .then(response =>
         this.perfilAdoptante = response)
       .catch(error => console.log(error));

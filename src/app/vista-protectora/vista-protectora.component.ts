@@ -27,7 +27,6 @@ export class VistaProtectoraComponent implements OnInit {
       })
       .catch(error => console.log(error));
 
-
     this.protectoraService.getTablaData()
       .then(response => {
         this.datosTabla = response;
@@ -39,8 +38,6 @@ export class VistaProtectoraComponent implements OnInit {
         this.perrosDeProtectoras = response
       )
       .catch(error => console.log(error));
-
-
   }
 
   onClick(pIdFavorito) {
@@ -54,10 +51,6 @@ export class VistaProtectoraComponent implements OnInit {
           .catch(error => console.log(error));
       })
       .catch(error => console.log(error));
-
-
-
-
   }
 
 
