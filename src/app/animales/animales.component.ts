@@ -95,11 +95,14 @@ export class AnimalesComponent implements OnInit {
       const IdPerro = perro.id;
 
       this.perrosService.favoritesDogs(IdPerro)
-        .then(response =>
-          console.log(response))
+        .then(response => {
+          this.perrosFavoritos.push(IdPerro)
+        })
         .catch(error => console.log(error));
 
       this.botonClicado = true;
+
+
 
     } else {
       this.router.navigate(['/identificar']);

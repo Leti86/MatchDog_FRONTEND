@@ -1,4 +1,4 @@
-<div class="perfil">
+<div class="perfil" *ngIf="perfilAdoptante">
     <h2>Perfil de {{perfilAdoptante.nombre}}</h2>
     <img src={{perfilAdoptante.fotos_casa}} class="img-fluid">
     <p><span>Nombre y apellidos:</span> {{perfilAdoptante.nombre}} {{perfilAdoptante.apellidos}}</p>

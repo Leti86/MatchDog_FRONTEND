@@ -20,7 +20,6 @@ export class PerfilAdoptanteComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.id = params.idAdoptante;
     })
-    //ahora hay que pasarle esta id a nuestra función de recuperación del perfil
 
 
     this.adoptantesService.perfilDesdeProtectora(this.id)
