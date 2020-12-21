@@ -57,9 +57,9 @@ export class FormularioEditComponent implements OnInit {
             Validators.required),
           metros_exterior: new FormControl(this.datosAdoptantes.metros_exterior, [
             Validators.min(0),
-            this.numberValidator]), //dato no obligatorio
+            this.numberValidator]),
           tipo_espacio_exterior: new FormControl(this.datosAdoptantes.metros_exterior,
-            Validators.required), //dato no obligatorio
+            Validators.required),
           fotos_casa: new FormControl(this.datosAdoptantes.fotos_casa,
             Validators.required),
           password: new FormControl(this.datosAdoptantes.password, [
@@ -75,7 +75,7 @@ export class FormularioEditComponent implements OnInit {
 
   onSubmit() {
     this.adoptanteService.update(this.formEdicionAdoptante.value)
-      //console.log('LOCALIZARLOOOOOOOOOO', this.formEdicionAdoptante.value)
+
       .then(response => {
         this.router.navigate(['/vistaadoptante']);
       })
@@ -84,10 +84,10 @@ export class FormularioEditComponent implements OnInit {
   }
 
 
-  //Validador personalizado: comprueba si se ha introducido un número (una letra la reconoce como null)
+
   numberValidator(control: FormControl) {
     const valor = control.value;
-    // console.log(valor)
+
     if (valor === null) {
       return { numberValidator: 'el campo debe ser numérico' }
     } else {

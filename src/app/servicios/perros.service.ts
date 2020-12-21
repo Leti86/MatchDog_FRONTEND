@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 export interface Perro {
@@ -47,7 +47,7 @@ export class PerrosService {
     return this.httpClient.get<Perro[]>(`${this.baseUrl}/tamano/${pTamano}`).toPromise();
   }
 
-  //esta función nunca se llama porque no tiene un botón para llamarla directamente. solucionar este problema
+
   getDogsByAgeAndSize(pEdad, pTamano): Promise<Perro[]> {
     return this.httpClient.get<Perro[]>(`${this.baseUrl}/${pEdad}/${pTamano}`).toPromise();
   }

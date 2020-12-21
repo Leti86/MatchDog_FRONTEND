@@ -27,10 +27,10 @@ export class CategoriasComponent implements OnInit {
   }
 
   async ngOnInit() {
-    //aqui tengo que hacer una un bucle que recorra el array de categorias y me vaya devolviendo el numero de post de dicha categoria
+
     let i = 0;
     for (let categoria of this.arrCategorias) {
-      /* const totalPost = await this.blogService.countPost(categoria) */
+
       const object = await this.blogService.countPost(categoria.titulo);
       console.log(object);
 

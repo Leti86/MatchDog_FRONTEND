@@ -43,8 +43,8 @@ export class LoginComponent implements OnInit {
         Validators.required),
       metros_exterior: new FormControl('',
         Validators.min(0),
-      ), //dato no obligatorio
-      tipo_espacio_exterior: new FormControl(''), //dato no obligatorio
+      ),
+      tipo_espacio_exterior: new FormControl(''),
       fotos_casa: new FormControl('',
         Validators.required),
       password: new FormControl('', [
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(this.formRegistroAdoptante.value) MANDA BIEN LOS DATOS DE ADOPTANTE, INCLUIDO LA PASSWORD
+
     this.adoptantesService.create(this.formRegistroAdoptante.value)
       .then(response => {
         console.log(response);
@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  //Validador personalizado: comprueba si se ha introducido un número (una letra la reconoce como null)
+
   numberValidator(control: FormControl) {
     const valor = control.value;
 

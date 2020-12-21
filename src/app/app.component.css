@@ -21,14 +21,10 @@ footer{
     display: flex;
     color:rgba(250, 250, 250, 0.418);
     justify-content: space-around;
-    /* width: 50%; */
+    
     
 }
-/* .copyright{
-    color:rgba(250, 250, 250, 0.418);
-    margin-top: 20px;
-    max-width: fit-content;
-} */
+
 
 
 i{

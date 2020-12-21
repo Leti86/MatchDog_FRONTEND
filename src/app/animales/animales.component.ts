@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Adoptante, AdoptantesService } from '../servicios/adoptantes.service';
 import { Perro, PerrosService } from '../servicios/perros.service';
-// import swal from 'sweetalert';
+
 
 @Component({
   selector: 'app-animales',
@@ -109,7 +109,7 @@ export class AnimalesComponent implements OnInit {
     }
 
 
-    //petición:traer un array de favoritos. cuando vayamos a pintar los perros, si está dentro de ese array, que el botón cambie de color o quede desactivado. recuperar todos los favoritos del usuario logado para comprobar si está dentro de ese array el perro. conviene desactivar el botón para que no pueda volver a añadir
+
 
 
 

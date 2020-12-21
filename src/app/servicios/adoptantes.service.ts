@@ -47,7 +47,7 @@ export class AdoptantesService {
   }
 
   login(formValues): Promise<any> {
-    // console.log(formValues);
+
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json"

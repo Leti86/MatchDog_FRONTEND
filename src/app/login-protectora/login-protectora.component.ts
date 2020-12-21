@@ -85,7 +85,7 @@ export class LoginProtectoraComponent implements OnInit {
 
   numberValidator(control: FormControl) {
     const valor = control.value;
-    // console.log(valor)
+
     if (valor === null) {
       return { numberValidator: 'el campo debe ser numérico' }
     } else {

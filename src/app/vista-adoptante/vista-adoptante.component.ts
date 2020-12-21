@@ -29,7 +29,7 @@ export class VistaAdoptanteComponent implements OnInit {
         this.datosAdoptante = response)
       .catch(error => console.log(error));
 
-    //console.log(this.datosAdoptante);
+
 
     this.adoptantesService.getFavouriteDogs()
       .then(response =>
@@ -39,7 +39,7 @@ export class VistaAdoptanteComponent implements OnInit {
 
   onclick(perro) {
     const IdEliminar = perro.idFavorito;
-    //console.log(IdEliminar);
+
     this.adoptantesService.eliminarPerroListaFavoritos(IdEliminar)
       .then(response =>
         console.log(response)

@@ -40,7 +40,7 @@ export class MapComponent implements OnInit {
     this.protectoraService.getCoord()
       .then(response => {
         this.listadoCoords = response;
-        //console.log(this.listadoCoords);
+
       })
       .catch(error => console.log(error));
 
@@ -49,13 +49,13 @@ export class MapComponent implements OnInit {
   }
 
   onDbClick(pId, pInfo) {
-    //console.log(pId);
+
     if (this.infoActual) {
       this.infoActual.close()
     } this.infoActual = pInfo;
 
     this.protectoraSeleccionada.emit(pId);
-    //console.log(pId + 'IdProtectora');  
+
 
   }
 

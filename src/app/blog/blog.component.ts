@@ -24,8 +24,7 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Recuperamos todos los Post
-    //segun la ruta que recibimos cargamos un post u otra categoria. ActivatedRoute me devuelve el parmetro variable de la ruta
+
     this.activatedRoute.params.subscribe(params => {
       let valor = parseInt(params.categoria);
 
@@ -79,13 +78,9 @@ export class BlogComponent implements OnInit {
   // Recuperamos Post por palabra introducida en buscador
   searchWord($event) {
     if ($event.target.value === "") {
-      this.blogService.getAllPosts()
-        .then(response => {
-          {
-            this.posts = response;
 
-          }
-        })
+      this.blogService.getByPage(this.paginaActual)
+        .then(response => this.posts = response)
         .catch(error => console.log(error));
     } else {
       this.blogService.getPostByWord(($event.target.value).toLowerCase())
