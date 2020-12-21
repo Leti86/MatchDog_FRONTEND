@@ -44,7 +44,6 @@ export class VistaProtectoraComponent implements OnInit {
   }
 
   onClick(pIdFavorito) {
-    //console.log(pIdFavorito);
 
     this.protectoraService.deleteByFavoriteRelation(pIdFavorito)
       .then(response => {
@@ -61,9 +60,5 @@ export class VistaProtectoraComponent implements OnInit {
 
   }
 
-  onClickVer(dato) {
-    console.log(dato);
-
-  }
 
 }

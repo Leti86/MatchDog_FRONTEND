@@ -2,9 +2,8 @@
     text-align: center;
     margin: 3% 0 0 0;
     max-width: 100%;
-    background-color: violet;
-    
 }
+
 .contenedor-opciones h2{
     margin: 3% 0;
     font-family: var(--fuente_titulos);
@@ -18,7 +17,7 @@
     flex-flow: column;
     justify-items: center;
     align-items: center;
-    background-color: blue;
+    max-height: fit-content;
     
 }
 
@@ -45,16 +44,17 @@
 
 @media(min-width:800px){
     .opciones{
+       
         display:flex;
         flex-flow: row;
         justify-content: space-evenly;
-       
+        max-height: fit-content;
         
     }
     .opciones button{
         width: 20%;
         height: 100px;
-        margin:0 0 6% 0;
+       
         
     }
 }

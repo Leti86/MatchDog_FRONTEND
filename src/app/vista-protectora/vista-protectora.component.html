@@ -63,7 +63,8 @@
                             <td>{{dato.localidad}}</td>
                             <td>
                                 <a class="btn btn-dark" (click)="onClick(dato.id_tabla_favorito)">Eliminar</a>
-                                <a class="btn btn-dark ver_perfil" (click)="onClickVer(dato.id_adoptante)">Ver</a>
+                                <a class="btn btn-dark ver_perfil"
+                                    [routerLink]="['/perfilAdoptante', dato.id_adoptante]">Ver</a>
                             </td>
                         </tr>
 

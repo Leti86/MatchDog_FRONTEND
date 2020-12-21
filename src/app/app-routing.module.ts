@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'vistaadoptante', component: VistaAdoptanteComponent },
   { path: 'vistaadoptante/editarAdoptante', component: FormularioEditComponent },
   { path: 'vistaprotectora', component: VistaProtectoraComponent },
-  { path: 'perfilAdoptante', component: PerfilAdoptanteComponent },
+  { path: 'perfilAdoptante/:idAdoptante', component: PerfilAdoptanteComponent },
   { path: '**', redirectTo: '/home' }
 ];
 
