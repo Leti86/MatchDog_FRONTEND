@@ -57,6 +57,7 @@ button{
 
 @media(min-width:800px){
     .contenedor:first-child{
+        border-bottom: none;
         border-right:3px solid lightgray;
         margin: 0;
     }

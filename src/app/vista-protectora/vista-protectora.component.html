@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="contenedor col-md-4 col-12" *ngIf="datosProtectora">
             <h2>Tus datos</h2>
@@ -13,58 +13,63 @@
             <p><span>Longitud: </span>{{datosProtectora.longitud}}</p>
             <p><span>Necesidad de voluntarios: </span>{{datosProtectora.necesidad_voluntarios}}</p>
             <p><span>Descripción: </span>{{datosProtectora.comentarios}}</p>
-            <h3>Todos tus perros</h3>
-            <table class="table table-striped">
+            <div class="datos-perros">
+                <h2>Todos tus perros</h2>
+                <table class="table table-striped">
 
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Raza</th>
-                        <th>Edad</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let perro of perrosDeProtectoras">
-                        <td>{{perro.nombre_perro}}</td>
-                        <td>{{perro.raza}}</td>
-                        <td>{{perro.edad}}</td>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Raza</th>
+                            <th>Edad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let perro of perrosDeProtectoras">
+                            <td>{{perro.nombre_perro}}</td>
+                            <td>{{perro.raza}}</td>
+                            <td>{{perro.edad}}</td>
 
-                    </tr>
-                </tbody>
+                        </tr>
+                    </tbody>
 
-            </table>
+                </table>
+            </div>
 
         </div>
         <div class="contenedor col-md-8 col-12">
             <h2>Adoptantes interesados</h2>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Nombre del perro</th>
-                        <th>Adoptantes interesados</th>
-                        <th>Nombre del interesado</th>
-                        <th>Teléfono</th>
-                        <th>Mail</th>
-                        <th>Localidad</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre del perro</th>
+                            <th>Adoptantes interesados</th>
+                            <th>Nombre del interesado</th>
+                            <th>Teléfono</th>
+                            <th>Mail</th>
+                            <th>Localidad</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    <tr *ngFor="let dato of datosTabla">
-                        <td>{{dato.nombre_perro}}</td>
-                        <td>{{dato.adoptantes_interesados}}</td>
-                        <td>{{dato.nombre_adoptante}}</td>
-                        <td>{{dato.telefono}}</td>
-                        <td>{{dato.email}}</td>
-                        <td>{{dato.localidad}}</td>
-                        <td>
-                            <a class="btn btn-dark" (click)="onClick(dato.id_tabla_favorito)">Eliminar</a>
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr *ngFor="let dato of datosTabla">
+                            <td>{{dato.nombre_perro}}</td>
+                            <td>{{dato.adoptantes_interesados}}</td>
+                            <td>{{dato.nombre_adoptante}}</td>
+                            <td>{{dato.telefono}}</td>
+                            <td>{{dato.email}}</td>
+                            <td>{{dato.localidad}}</td>
+                            <td>
+                                <a class="btn btn-dark" (click)="onClick(dato.id_tabla_favorito)">Eliminar</a>
+                                <a class="btn btn-dark ver_perfil" (click)="onClickVer(dato.id_adoptante)">Ver</a>
+                            </td>
+                        </tr>
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

@@ -44,17 +44,25 @@ export class VistaProtectoraComponent implements OnInit {
   }
 
   onClick(pIdFavorito) {
-    this.protectoraService.deleteByFavoriteRelation(pIdFavorito)
-      .then(response => console.log(response)
-      )
-      .catch(error => console.log(error));
+    //console.log(pIdFavorito);
 
-    this.protectoraService.getTablaData()
+    this.protectoraService.deleteByFavoriteRelation(pIdFavorito)
       .then(response => {
-        this.datosTabla = response;
+        this.protectoraService.getTablaData()
+          .then(response => {
+            this.datosTabla = response;
+          })
+          .catch(error => console.log(error));
       })
       .catch(error => console.log(error));
 
+
+
+
+  }
+
+  onClickVer(dato) {
+    console.log(dato);
 
   }
 

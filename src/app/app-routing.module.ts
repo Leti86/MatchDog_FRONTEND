@@ -7,6 +7,7 @@ import { FormularioEditComponent } from './formulario-edit/formulario-edit.compo
 import { HomeComponent } from './home/home.component';
 import { IdentificarComponent } from './identificar/identificar.component';
 import { LoginComponent } from './login/login.component';
+import { PerfilAdoptanteComponent } from './perfil-adoptante/perfil-adoptante.component';
 import { ProtectorasComponent } from './protectoras/protectoras.component';
 import { VistaAdoptanteComponent } from './vista-adoptante/vista-adoptante.component';
 import { VistaProtectoraComponent } from './vista-protectora/vista-protectora.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'vistaadoptante', component: VistaAdoptanteComponent },
   { path: 'vistaadoptante/editarAdoptante', component: FormularioEditComponent },
   { path: 'vistaprotectora', component: VistaProtectoraComponent },
+  { path: 'perfilAdoptante', component: PerfilAdoptanteComponent },
   { path: '**', redirectTo: '/home' }
 ];
 

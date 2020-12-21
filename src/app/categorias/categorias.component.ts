@@ -21,7 +21,7 @@ export class CategoriasComponent implements OnInit {
 
   constructor(private blogService: BlogService,
     private router: Router) {
-    this.arrCategorias = [{ titulo: "aseo" }, { titulo: "comportamiento" }, { titulo: "cuidado" }, { titulo: "seguridad" }];
+    this.arrCategorias = [{ titulo: "Aseo" }, { titulo: "Comportamiento" }, { titulo: "Cuidado" }, { titulo: "Seguridad" }];
     this.arrPost = []
     this.totalPost = 0;
   }

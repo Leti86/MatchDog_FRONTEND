@@ -1,10 +1,31 @@
+
 .row{
     margin:3% 0;
-    background-color: pink;
+    
+    
 }
-.contenedor:first-child{
-    border-right: 3px solid lightgray;
-}
+
+
 .contenedor h2{
     margin-bottom: 5%;
+}
+.datos-perros{
+    margin: 10% 0;
+}
+
+.contenedor{
+    padding-left: 2%;
+} 
+
+.row .contenedor .ver_perfil{
+    margin-top: 10px;
+}
+
+
+@media(min-width:800px){
+    .contenedor:first-child{
+        border-right: 3px solid lightgray;
+        
+    }
+
 }

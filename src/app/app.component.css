@@ -5,7 +5,7 @@ app-nav{
 footer{
     width: 100%;
     margin-bottom: 0;
-    height: 15vh;
+    height: 100px;
     padding: 1.5em 0 0 0;
     background-color: black;
     display: flex;
@@ -16,7 +16,7 @@ footer{
 
 .router{
     width: 100%;
-    height: auto;
+    min-height: calc(100vh - 40px);
 }
 
 .container{
